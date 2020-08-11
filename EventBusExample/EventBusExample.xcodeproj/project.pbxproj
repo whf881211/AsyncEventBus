@@ -15,6 +15,8 @@
 		A6156E0024DD793D0031A5C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */; };
 		A6156E0324DD793D0031A5C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0224DD793D0031A5C3 /* main.m */; };
 		A6156E0D24DD793D0031A5C3 /* EventBusExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */; };
+		A625192924E2780D00C99934 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625192824E2780D00C99934 /* EventBus.swift */; };
+		A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625193524E2B9C100C99934 /* EventBusProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,9 @@
 		A6156E0824DD793D0031A5C3 /* EventBusExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventBusExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventBusExampleTests.m; sourceTree = "<group>"; };
 		A6156E0E24DD793D0031A5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		A625192824E2780D00C99934 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
+		A625193524E2B9C100C99934 /* EventBusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +89,7 @@
 		A6156DEF24DD793A0031A5C3 /* EventBusExample */ = {
 			isa = PBXGroup;
 			children = (
+				A625192624E277D300C99934 /* source */,
 				A6156DF024DD793A0031A5C3 /* AppDelegate.h */,
 				A6156DF124DD793A0031A5C3 /* AppDelegate.m */,
 				A6156DF324DD793A0031A5C3 /* SceneDelegate.h */,
@@ -106,6 +112,16 @@
 				A6156E0E24DD793D0031A5C3 /* Info.plist */,
 			);
 			path = EventBusExampleTests;
+			sourceTree = "<group>";
+		};
+		A625192624E277D300C99934 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				A625192824E2780D00C99934 /* EventBus.swift */,
+				A625193524E2B9C100C99934 /* EventBusProtocol.swift */,
+				A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +173,7 @@
 				TargetAttributes = {
 					A6156DEC24DD793A0031A5C3 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					A6156E0724DD793D0031A5C3 = {
 						CreatedOnToolsVersion = 11.6;
@@ -209,6 +226,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6156DF824DD793A0031A5C3 /* ViewController.m in Sources */,
+				A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */,
+				A625192924E2780D00C99934 /* EventBus.swift in Sources */,
 				A6156DF224DD793A0031A5C3 /* AppDelegate.m in Sources */,
 				A6156E0324DD793D0031A5C3 /* main.m in Sources */,
 				A6156DF524DD793A0031A5C3 /* SceneDelegate.m in Sources */,
@@ -367,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EventBusExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -375,6 +395,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.EventBusExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventBusExample/source/EventBusExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -383,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EventBusExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -391,6 +415,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.EventBusExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventBusExample/source/EventBusExample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -398,6 +424,7 @@
 		A6156E1524DD793D0031A5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EventBusExampleTests/Info.plist;
@@ -417,6 +444,7 @@
 		A6156E1624DD793D0031A5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EventBusExampleTests/Info.plist;
