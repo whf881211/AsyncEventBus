@@ -9,20 +9,31 @@
 import Foundation
 
 
-
-@objc protocol SubscriberRepresentable : NSObjectProtocol {
+@objc protocol SubscriberRepresentable  {
+    
     func unsubscribe();
+    
     func topic() -> String
+    
     func handler() -> ((_ payload: Any? )->())?
 }
 
-@objc protocol BusRepresentable: NSObjectProtocol {
+
+@objc protocol BusRepresentable {
+    
     func subscribe(topic: String, action: (_ payload: Any?)->()) -> SubscriberRepresentable
+    
     func publish(topic: String, payload: Any? )
+    
     func publish_once(topic: String, payload: Any? )
 }
 
-@objc protocol BusMessageRepresentable: NSObjectProtocol {
-    func topic() -> String
+
+@objc protocol BusMessageRepresentable {
+    
+    var topic: String { get set }
+    
+    var payload: Any { get set }
+
     func reply(payload: Any?)
 }
