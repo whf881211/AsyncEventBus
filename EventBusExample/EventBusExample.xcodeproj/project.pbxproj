@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A6156DF224DD793A0031A5C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156DF124DD793A0031A5C3 /* AppDelegate.m */; };
 		A6156DF524DD793A0031A5C3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156DF424DD793A0031A5C3 /* SceneDelegate.m */; };
-		A6156DF824DD793A0031A5C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156DF724DD793A0031A5C3 /* ViewController.m */; };
 		A6156DFB24DD793A0031A5C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6156DF924DD793A0031A5C3 /* Main.storyboard */; };
 		A6156DFD24DD793D0031A5C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6156DFC24DD793D0031A5C3 /* Assets.xcassets */; };
 		A6156E0024DD793D0031A5C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,8 @@
 		A6156E0D24DD793D0031A5C3 /* EventBusExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */; };
 		A625192924E2780D00C99934 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625192824E2780D00C99934 /* EventBus.swift */; };
 		A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625193524E2B9C100C99934 /* EventBusProtocol.swift */; };
+		E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AE83FA252E0F62000DE71A /* ViewController.m */; };
+		E2E25B1224E97DC10029481B /* BusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E25B1124E97DC10029481B /* BusProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +36,6 @@
 		A6156DF124DD793A0031A5C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A6156DF324DD793A0031A5C3 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A6156DF424DD793A0031A5C3 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A6156DF624DD793A0031A5C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A6156DF724DD793A0031A5C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A6156DFA24DD793A0031A5C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6156DFC24DD793D0031A5C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6156DFF24DD793D0031A5C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +47,9 @@
 		A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		A625192824E2780D00C99934 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
 		A625193524E2B9C100C99934 /* EventBusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusProtocol.swift; sourceTree = "<group>"; };
+		E2AE83F9252E0F62000DE71A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E2AE83FA252E0F62000DE71A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E2E25B1124E97DC10029481B /* BusProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +91,13 @@
 		A6156DEF24DD793A0031A5C3 /* EventBusExample */ = {
 			isa = PBXGroup;
 			children = (
+				E2AE83F9252E0F62000DE71A /* ViewController.h */,
+				E2AE83FA252E0F62000DE71A /* ViewController.m */,
 				A625192624E277D300C99934 /* source */,
 				A6156DF024DD793A0031A5C3 /* AppDelegate.h */,
 				A6156DF124DD793A0031A5C3 /* AppDelegate.m */,
 				A6156DF324DD793A0031A5C3 /* SceneDelegate.h */,
 				A6156DF424DD793A0031A5C3 /* SceneDelegate.m */,
-				A6156DF624DD793A0031A5C3 /* ViewController.h */,
-				A6156DF724DD793A0031A5C3 /* ViewController.m */,
 				A6156DF924DD793A0031A5C3 /* Main.storyboard */,
 				A6156DFC24DD793D0031A5C3 /* Assets.xcassets */,
 				A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */,
@@ -120,6 +122,7 @@
 				A625192824E2780D00C99934 /* EventBus.swift */,
 				A625193524E2B9C100C99934 /* EventBusProtocol.swift */,
 				A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */,
+				E2E25B1124E97DC10029481B /* BusProvider.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -225,7 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6156DF824DD793A0031A5C3 /* ViewController.m in Sources */,
+				E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */,
+				E2E25B1224E97DC10029481B /* BusProvider.swift in Sources */,
 				A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */,
 				A625192924E2780D00C99934 /* EventBus.swift in Sources */,
 				A6156DF224DD793A0031A5C3 /* AppDelegate.m in Sources */,
@@ -322,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -374,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

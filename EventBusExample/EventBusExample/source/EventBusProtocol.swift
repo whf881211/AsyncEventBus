@@ -8,32 +8,40 @@
 
 import Foundation
 
+typealias EventHandleBlock = (BusMessageRepresentable) -> Void
 
-@objc protocol SubscriberRepresentable  {
+
+///用于取消订阅
+@objc protocol SubscribeDisposable {
+    var topic: String { get }
+    var handler: EventHandleBlock? {get }
     
+    @objc(unsubscribe)
     func unsubscribe();
-    
-    func topic() -> String
-    
-    func handler() -> ((_ payload: Any? )->())?
 }
-
 
 @objc protocol BusRepresentable {
     
-    func subscribe(topic: String, action: (_ payload: Any?)->()) -> SubscriberRepresentable
+    /// SUBSCRIBE
+    /// 返回的subscriber可用于取消订阅
+    @discardableResult
+    @objc(subscribeTopic: action:)
+    func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable
     
+    
+    ///PUBLISH
+    @objc(publishTopic:)
+    func publish(topic: String)
+    
+    @objc(publishTopic: payload:)
     func publish(topic: String, payload: Any? )
     
-    func publish_once(topic: String, payload: Any? )
+    @objc(publishTopic: payload: replyHandler:)
+    func publish(topic: String, payload: Any?, replyHandler: @escaping EventHandleBlock)
 }
 
-
 @objc protocol BusMessageRepresentable {
-    
-    var topic: String { get set }
-    
-    var payload: Any { get set }
-
+    var topic: String { get }
+    var payload: Any? { get }
     func reply(payload: Any?)
 }
