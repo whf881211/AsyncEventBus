@@ -35,12 +35,12 @@ typealias EventHandleBlock = (BusMessageRepresentable) -> Void
     @objc(publishTopic: payload:)
     func publish(topic: String, payload: Any? )
     
-//    @objc(publishTopic: payload: replyHandler:)
-//    func publish(topic: String, payload: Any?, replyHandler: @escaping EventHandleBlock)
+    @objc(publishTopic: payload: replyHandler:)
+    func publish(topic: String, payload: Any?, replyHandler: @escaping EventHandleBlock)
 }
 
 @objc protocol BusMessageRepresentable {
     var topic: String { get }
     var payload: Any? { get }
-//    func reply(payload: Any?)
+    func reply(payload: Any?)
 }

@@ -16,7 +16,10 @@ class EventMessage:  NSObject, BusMessageRepresentable {
     
     var payload: Any?
     
+    var replyTopic: String = ""
+    
     func reply(payload: Any?) {
+        self.bus.publish(topic: replyTopic, payload: payload)
     }
     
 }
@@ -70,6 +73,8 @@ class EventNotificationBus: NSObject, BusRepresentable {
         message.topic = topic
         message.payload = payload
         message.replyHandler = replyHandler
+        message.replyTopic = topic + "/$reply"
+        self.bus.subscribe(topic: message.replyTopic, handler: replyHandler)
         _publishMessage(message)
     }
     
@@ -107,6 +112,22 @@ class EventNotificationBus: NSObject, BusRepresentable {
         ///返回disposable
         let subscriber = EventBusSubscriber.init(topic, handler: handler, preblock: unsubscribePreBlock)
         return subscriber
+    }
+    
+    func subscribe(replyTopic: String, replyHandler:@escaping EventHandleBlock) {
+        ///Register Observer
+        weak var observer: NSObjectProtocol?
+        observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: replyTopic), object: self.markedObject, queue: self.workingQueue) { (notification) in
+            ///取消监听
+            NotificationCenter.default.removeObserver(observer as Any)
+            self.topicManager.remove(topic: replyTopic)
+            ///发送事件
+            if let messageRepresentable = notification.userInfo?[self.messageKey] as? BusMessageRepresentable{
+                EventNotificationBus.scheduleDistribute(block: replyHandler, argument: messageRepresentable)
+            }
+        }
+        /// TopicManager
+        let _ = self.topicManager.add(topic: replyTopic)
     }
     
     func _publishMessage(_ message: BusMessageRepresentable) {
