@@ -14,7 +14,7 @@
 		A6156E0024DD793D0031A5C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */; };
 		A6156E0324DD793D0031A5C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0224DD793D0031A5C3 /* main.m */; };
 		A6156E0D24DD793D0031A5C3 /* EventBusExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */; };
-		A625192924E2780D00C99934 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625192824E2780D00C99934 /* EventBus.swift */; };
+		A625192924E2780D00C99934 /* EventBus-NotificationImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */; };
 		A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625193524E2B9C100C99934 /* EventBusProtocol.swift */; };
 		E26F398B256A6034001B1D9B /* MessageReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E26F398A256A6034001B1D9B /* MessageReceiver.m */; };
 		E26F3990256A6A65001B1D9B /* MessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = E26F398F256A6A65001B1D9B /* MessageSender.m */; };
@@ -49,7 +49,7 @@
 		A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventBusExampleTests.m; sourceTree = "<group>"; };
 		A6156E0E24DD793D0031A5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		A625192824E2780D00C99934 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
+		A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventBus-NotificationImp.swift"; sourceTree = "<group>"; };
 		A625193524E2B9C100C99934 /* EventBusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusProtocol.swift; sourceTree = "<group>"; };
 		E26F3989256A6034001B1D9B /* MessageReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageReceiver.h; sourceTree = "<group>"; };
 		E26F398A256A6034001B1D9B /* MessageReceiver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageReceiver.m; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		A625192624E277D300C99934 /* source */ = {
 			isa = PBXGroup;
 			children = (
-				A625192824E2780D00C99934 /* EventBus.swift */,
+				A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */,
 				A625193524E2B9C100C99934 /* EventBusProtocol.swift */,
 				A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */,
 				E2E25B1124E97DC10029481B /* BusProvider.swift */,
@@ -258,7 +258,7 @@
 				E2E0639B256A5AD2004ED4BC /* UIAlertController+Convenience.m in Sources */,
 				E2E25B1224E97DC10029481B /* BusProvider.swift in Sources */,
 				A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */,
-				A625192924E2780D00C99934 /* EventBus.swift in Sources */,
+				A625192924E2780D00C99934 /* EventBus-NotificationImp.swift in Sources */,
 				A6156DF224DD793A0031A5C3 /* AppDelegate.m in Sources */,
 				A6156E0324DD793D0031A5C3 /* main.m in Sources */,
 				A6156DF524DD793A0031A5C3 /* SceneDelegate.m in Sources */,

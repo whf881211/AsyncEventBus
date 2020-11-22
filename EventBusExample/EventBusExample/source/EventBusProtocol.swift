@@ -17,31 +17,30 @@ typealias EventHandleBlock = (BusMessageRepresentable) -> Void
     var handler: EventHandleBlock? {get }
     
     @objc(unsubscribe)
-    func unsubscribe();
+    func unsubscribe()
 }
 
 @objc protocol BusRepresentable {
     
-    /// SUBSCRIBE
+    /// Subscribe
     /// 返回的subscriber可用于取消订阅
     @discardableResult
     @objc(subscribeTopic: action:)
     func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable
     
-    
-    ///PUBLISH
+    ///Publish
     @objc(publishTopic:)
     func publish(topic: String)
     
     @objc(publishTopic: payload:)
     func publish(topic: String, payload: Any? )
     
-    @objc(publishTopic: payload: replyHandler:)
-    func publish(topic: String, payload: Any?, replyHandler: @escaping EventHandleBlock)
+//    @objc(publishTopic: payload: replyHandler:)
+//    func publish(topic: String, payload: Any?, replyHandler: @escaping EventHandleBlock)
 }
 
 @objc protocol BusMessageRepresentable {
     var topic: String { get }
     var payload: Any? { get }
-    func reply(payload: Any?)
+//    func reply(payload: Any?)
 }
