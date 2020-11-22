@@ -21,3 +21,9 @@ class BusProvider: NSObject {
     }()
     
 }
+
+extension NSObject {
+    @objc var bus: BusRepresentable {
+        return BusProvider.instance
+    }
+}

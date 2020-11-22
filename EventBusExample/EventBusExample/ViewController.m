@@ -7,16 +7,31 @@
 //
 
 #import "ViewController.h"
-
+#import "EventBusExample-Swift.h"
+#import "MessageSender.h"
+#import "MessageReceiver.h"
 @interface ViewController ()
+@property(nonatomic, strong) MessageSender *sender;
+@property(nonatomic, strong) MessageReceiver *receiver;
 
 @end
 
 @implementation ViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _sender = [MessageSender new];
+        _receiver = [MessageReceiver new];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [_sender sendMessage:@"/test/a"];
 }
 
 

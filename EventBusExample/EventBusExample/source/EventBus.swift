@@ -28,7 +28,7 @@ class EventBusSubscriber: NSObject, SubscribeDisposable {
     internal var topic: String
         
     func unsubscribe() {
-        ///TODO
+        unsubscribePreBlock()
     }
     
     fileprivate var unsubscribePreBlock: () -> ()
@@ -42,11 +42,15 @@ class EventBusSubscriber: NSObject, SubscribeDisposable {
 }
 
 
-
-
 class EventNotificationBus: NSObject, BusRepresentable {
-    let markedObject: String = "EventBus.Dispatch"
+    let markedObject: String = "EventBus"
     let messageKey: String = "EventBus.Message"
+    var observeArray:  [NSObjectProtocol] = [NSObjectProtocol]()
+    
+    lazy var topicManager: TopicMaanager = {
+        let manager = TopicMaanager.init()
+        return manager
+    }()
     
     func publish(topic: String) {
         let message = EventMessage.init()
@@ -69,26 +73,36 @@ class EventNotificationBus: NSObject, BusRepresentable {
         _publishMessage(message)
     }
     
-    
     lazy var workingQueue: OperationQueue = {
-        let q = OperationQueue.init();
-        q.name = "EventBus.Dispatch.Queue"
-        q.maxConcurrentOperationCount = 1
-        return q
+        let queue = OperationQueue.init();
+        queue.name = "EventBus.Dispatch.Queue"
+        queue.maxConcurrentOperationCount = 1
+        return queue
     }()
         
     ///订阅
+    @discardableResult
     func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable {
         ///Register Observer
-        weak var observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: topic), object: self.markedObject, queue: self.workingQueue) { (notification) in
+        weak var observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: topic), object: self.markedObject, queue: self.workingQueue) { [weak self] (notification) in
             ///发送事件
+            guard let self = self else {
+                return
+            }
             if let messageRepresentable = notification.userInfo?[self.messageKey] as? BusMessageRepresentable{
                 EventNotificationBus.scheduleDistribute(block: handler, argument: messageRepresentable)
             }
         }
-        ///TODO TopicManager
-        let unsubscribePreBlock = {
+        /// TopicManager
+        let _ = self.topicManager.add(topic: topic)
+        
+        let unsubscribePreBlock = { [weak self] in
+            guard let self = self else {
+                return
+            }
+            ///取消监听
             NotificationCenter.default.removeObserver(observer as Any)
+            self.topicManager.remove(topic: topic)
         }
         ///返回disposable
         let subscriber = EventBusSubscriber.init(topic, handler: handler, preblock: unsubscribePreBlock)
@@ -96,13 +110,18 @@ class EventNotificationBus: NSObject, BusRepresentable {
     }
     
     func _publishMessage(_ message: BusMessageRepresentable) {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: message.topic), object: markedObject, userInfo: [self.messageKey:message])
+        let topicList = self.topicManager.relateTopics(with: message.topic)
+        for topic: String in topicList {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: topic), object: self.markedObject, userInfo: [self.messageKey:message])
+        }
     }
 }
 
 extension EventNotificationBus  {
-    private class func scheduleDistribute(block: EventHandleBlock, argument:BusMessageRepresentable) {
-        block(argument)
+    private class func scheduleDistribute( block: @escaping EventHandleBlock, argument:BusMessageRepresentable) {
+        DispatchQueue.main.async {
+            block(argument)
+        }
     }
 }
 

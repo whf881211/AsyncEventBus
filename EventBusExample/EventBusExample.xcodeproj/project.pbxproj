@@ -16,7 +16,11 @@
 		A6156E0D24DD793D0031A5C3 /* EventBusExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */; };
 		A625192924E2780D00C99934 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625192824E2780D00C99934 /* EventBus.swift */; };
 		A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625193524E2B9C100C99934 /* EventBusProtocol.swift */; };
+		E26F398B256A6034001B1D9B /* MessageReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E26F398A256A6034001B1D9B /* MessageReceiver.m */; };
+		E26F3990256A6A65001B1D9B /* MessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = E26F398F256A6A65001B1D9B /* MessageSender.m */; };
 		E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AE83FA252E0F62000DE71A /* ViewController.m */; };
+		E2E0638525690898004ED4BC /* TopicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0638425690898004ED4BC /* TopicManager.swift */; };
+		E2E0639B256A5AD2004ED4BC /* UIAlertController+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E06399256A5AD2004ED4BC /* UIAlertController+Convenience.m */; };
 		E2E25B1224E97DC10029481B /* BusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E25B1124E97DC10029481B /* BusProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +51,15 @@
 		A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		A625192824E2780D00C99934 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
 		A625193524E2B9C100C99934 /* EventBusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusProtocol.swift; sourceTree = "<group>"; };
+		E26F3989256A6034001B1D9B /* MessageReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageReceiver.h; sourceTree = "<group>"; };
+		E26F398A256A6034001B1D9B /* MessageReceiver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageReceiver.m; sourceTree = "<group>"; };
+		E26F398E256A6A65001B1D9B /* MessageSender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSender.h; sourceTree = "<group>"; };
+		E26F398F256A6A65001B1D9B /* MessageSender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageSender.m; sourceTree = "<group>"; };
 		E2AE83F9252E0F62000DE71A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E2AE83FA252E0F62000DE71A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E2E0638425690898004ED4BC /* TopicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicManager.swift; sourceTree = "<group>"; };
+		E2E06399256A5AD2004ED4BC /* UIAlertController+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Convenience.m"; sourceTree = "<group>"; };
+		E2E0639A256A5AD2004ED4BC /* UIAlertController+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Convenience.h"; sourceTree = "<group>"; };
 		E2E25B1124E97DC10029481B /* BusProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +102,7 @@
 		A6156DEF24DD793A0031A5C3 /* EventBusExample */ = {
 			isa = PBXGroup;
 			children = (
+				E2E06398256A5AD2004ED4BC /* Category */,
 				E2AE83F9252E0F62000DE71A /* ViewController.h */,
 				E2AE83FA252E0F62000DE71A /* ViewController.m */,
 				A625192624E277D300C99934 /* source */,
@@ -103,6 +115,10 @@
 				A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */,
 				A6156E0124DD793D0031A5C3 /* Info.plist */,
 				A6156E0224DD793D0031A5C3 /* main.m */,
+				E26F3989256A6034001B1D9B /* MessageReceiver.h */,
+				E26F398A256A6034001B1D9B /* MessageReceiver.m */,
+				E26F398E256A6A65001B1D9B /* MessageSender.h */,
+				E26F398F256A6A65001B1D9B /* MessageSender.m */,
 			);
 			path = EventBusExample;
 			sourceTree = "<group>";
@@ -123,8 +139,18 @@
 				A625193524E2B9C100C99934 /* EventBusProtocol.swift */,
 				A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */,
 				E2E25B1124E97DC10029481B /* BusProvider.swift */,
+				E2E0638425690898004ED4BC /* TopicManager.swift */,
 			);
 			path = source;
+			sourceTree = "<group>";
+		};
+		E2E06398256A5AD2004ED4BC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E2E06399256A5AD2004ED4BC /* UIAlertController+Convenience.m */,
+				E2E0639A256A5AD2004ED4BC /* UIAlertController+Convenience.h */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,12 +255,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */,
+				E2E0639B256A5AD2004ED4BC /* UIAlertController+Convenience.m in Sources */,
 				E2E25B1224E97DC10029481B /* BusProvider.swift in Sources */,
 				A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */,
 				A625192924E2780D00C99934 /* EventBus.swift in Sources */,
 				A6156DF224DD793A0031A5C3 /* AppDelegate.m in Sources */,
 				A6156E0324DD793D0031A5C3 /* main.m in Sources */,
 				A6156DF524DD793A0031A5C3 /* SceneDelegate.m in Sources */,
+				E26F398B256A6034001B1D9B /* MessageReceiver.m in Sources */,
+				E26F3990256A6A65001B1D9B /* MessageSender.m in Sources */,
+				E2E0638525690898004ED4BC /* TopicManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
