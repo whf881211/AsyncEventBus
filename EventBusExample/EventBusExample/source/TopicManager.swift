@@ -28,6 +28,11 @@ class TopicMaanager: NSObject {
         }
         let topicSplitArray = Topic.split(separator: Character.init("/"))
         let topicPartCount = topicSplitArray.count
+        if (topicSplitArray.last == "$reply") {
+            ///是回复topic
+            return false
+        }
+        
         let topicInListSplitArray = TopicInList.split(separator: Character.init("/"))
         let topicInListPartCount = topicInListSplitArray.count
         let topicInListCorrespondSubString = topicInListSplitArray[(topicSplitArray.count - 1)]
