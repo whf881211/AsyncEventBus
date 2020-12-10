@@ -30,6 +30,9 @@ class TopicMaanager: NSObject {
         let topicPartCount = topicSplitArray.count
         let topicInListSplitArray = TopicInList.split(separator: Character.init("/"))
         let topicInListPartCount = topicInListSplitArray.count
+        if topicInListSplitArray.count < topicSplitArray.count {
+            return false
+        }
         let topicInListCorrespondSubString = topicInListSplitArray[(topicSplitArray.count - 1)]
 
         ///先检查前面部分

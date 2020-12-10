@@ -131,6 +131,9 @@ class EventNotificationBus: NSObject, BusRepresentable {
     }
     
     func _publishMessage(_ message: BusMessageRepresentable) {
+        if message.topic.hasSuffix("/#") || message.topic.hasSuffix("/+") {
+            assert(false, "Topic to publish can not has suffix # or +")
+        }
         let topicList = self.topicManager.relateTopics(with: message.topic)
         for topic: String in topicList {
             NotificationCenter.default.post(name: Notification.Name(rawValue: topic), object: self.markedObject, userInfo: [self.messageKey:message])
