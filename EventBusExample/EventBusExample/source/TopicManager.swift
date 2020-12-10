@@ -22,6 +22,8 @@ class TopicMaanager: NSObject {
     /// /a/+/b/c
     /// /a/#
     /// /a/b/#
+    
+    /// /a/b/c 对应 /a/#还不支持
     private func compareTopicIsRelate(with Topic: String, compareTo TopicInList: String) -> Bool{
         if Topic == TopicInList {
             return true
@@ -29,16 +31,18 @@ class TopicMaanager: NSObject {
         let topicSplitArray = Topic.split(separator: Character.init("/"))
         let topicPartCount = topicSplitArray.count
         if (topicSplitArray.last == "$reply") {
-            ///是回复topic
+            ///是回复topic，只找一模一样的
             return false
         }
         
         let topicInListSplitArray = TopicInList.split(separator: Character.init("/"))
         let topicInListPartCount = topicInListSplitArray.count
-        if topicInListSplitArray.count < topicSplitArray.count {
+        if topicInListSplitArray.last != "#" && topicInListPartCount < topicPartCount {
             return false
         }
+      
         let topicInListCorrespondSubString = topicInListSplitArray[(topicSplitArray.count - 1)]
+        
 
         ///先检查前面部分
         for i in 0 ..< (topicSplitArray.count - 1) {
