@@ -13,14 +13,13 @@
 		A6156DFD24DD793D0031A5C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6156DFC24DD793D0031A5C3 /* Assets.xcassets */; };
 		A6156E0024DD793D0031A5C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */; };
 		A6156E0324DD793D0031A5C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0224DD793D0031A5C3 /* main.m */; };
-		A6156E0D24DD793D0031A5C3 /* EventBusExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */; };
 		A625192924E2780D00C99934 /* EventBus-NotificationImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */; };
 		A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625193524E2B9C100C99934 /* EventBusProtocol.swift */; };
-		E26F398B256A6034001B1D9B /* MessageReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E26F398A256A6034001B1D9B /* MessageReceiver.m */; };
-		E26F3990256A6A65001B1D9B /* MessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = E26F398F256A6A65001B1D9B /* MessageSender.m */; };
+		E217DCCD25CFC6320039C24F /* TopicMatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217DCCC25CFC6320039C24F /* TopicMatcherProtocol.swift */; };
+		E227CF1425DE693E004374F8 /* TopicComparator-MqttImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227CF1325DE693E004374F8 /* TopicComparator-MqttImp.swift */; };
+		E227CF1B25DE7AF5004374F8 /* EventBusTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227CF1A25DE7AF5004374F8 /* EventBusTest.swift */; };
 		E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AE83FA252E0F62000DE71A /* ViewController.m */; };
 		E2E0638525690898004ED4BC /* TopicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0638425690898004ED4BC /* TopicManager.swift */; };
-		E2E0639B256A5AD2004ED4BC /* UIAlertController+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E06399256A5AD2004ED4BC /* UIAlertController+Convenience.m */; };
 		E2E25B1224E97DC10029481B /* BusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E25B1124E97DC10029481B /* BusProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,20 +45,17 @@
 		A6156E0124DD793D0031A5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6156E0224DD793D0031A5C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6156E0824DD793D0031A5C3 /* EventBusExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventBusExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventBusExampleTests.m; sourceTree = "<group>"; };
 		A6156E0E24DD793D0031A5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventBus-NotificationImp.swift"; sourceTree = "<group>"; };
 		A625193524E2B9C100C99934 /* EventBusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusProtocol.swift; sourceTree = "<group>"; };
-		E26F3989256A6034001B1D9B /* MessageReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageReceiver.h; sourceTree = "<group>"; };
-		E26F398A256A6034001B1D9B /* MessageReceiver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageReceiver.m; sourceTree = "<group>"; };
-		E26F398E256A6A65001B1D9B /* MessageSender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSender.h; sourceTree = "<group>"; };
-		E26F398F256A6A65001B1D9B /* MessageSender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageSender.m; sourceTree = "<group>"; };
+		E217DCCC25CFC6320039C24F /* TopicMatcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicMatcherProtocol.swift; sourceTree = "<group>"; };
+		E227CF1325DE693E004374F8 /* TopicComparator-MqttImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopicComparator-MqttImp.swift"; sourceTree = "<group>"; };
+		E227CF1925DE7AF4004374F8 /* EventBusExampleTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBusExampleTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E227CF1A25DE7AF5004374F8 /* EventBusTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusTest.swift; sourceTree = "<group>"; };
 		E2AE83F9252E0F62000DE71A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E2AE83FA252E0F62000DE71A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E2E0638425690898004ED4BC /* TopicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicManager.swift; sourceTree = "<group>"; };
-		E2E06399256A5AD2004ED4BC /* UIAlertController+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Convenience.m"; sourceTree = "<group>"; };
-		E2E0639A256A5AD2004ED4BC /* UIAlertController+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Convenience.h"; sourceTree = "<group>"; };
 		E2E25B1124E97DC10029481B /* BusProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +98,6 @@
 		A6156DEF24DD793A0031A5C3 /* EventBusExample */ = {
 			isa = PBXGroup;
 			children = (
-				E2E06398256A5AD2004ED4BC /* Category */,
 				E2AE83F9252E0F62000DE71A /* ViewController.h */,
 				E2AE83FA252E0F62000DE71A /* ViewController.m */,
 				A625192624E277D300C99934 /* source */,
@@ -115,10 +110,6 @@
 				A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */,
 				A6156E0124DD793D0031A5C3 /* Info.plist */,
 				A6156E0224DD793D0031A5C3 /* main.m */,
-				E26F3989256A6034001B1D9B /* MessageReceiver.h */,
-				E26F398A256A6034001B1D9B /* MessageReceiver.m */,
-				E26F398E256A6A65001B1D9B /* MessageSender.h */,
-				E26F398F256A6A65001B1D9B /* MessageSender.m */,
 			);
 			path = EventBusExample;
 			sourceTree = "<group>";
@@ -126,8 +117,9 @@
 		A6156E0B24DD793D0031A5C3 /* EventBusExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6156E0C24DD793D0031A5C3 /* EventBusExampleTests.m */,
 				A6156E0E24DD793D0031A5C3 /* Info.plist */,
+				E227CF1A25DE7AF5004374F8 /* EventBusTest.swift */,
+				E227CF1925DE7AF4004374F8 /* EventBusExampleTests-Bridging-Header.h */,
 			);
 			path = EventBusExampleTests;
 			sourceTree = "<group>";
@@ -135,22 +127,31 @@
 		A625192624E277D300C99934 /* source */ = {
 			isa = PBXGroup;
 			children = (
-				A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */,
-				A625193524E2B9C100C99934 /* EventBusProtocol.swift */,
-				A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */,
+				E227CF1025DE68ED004374F8 /* Protocol */,
+				E217DCD425CFC83F0039C24F /* Imp */,
 				E2E25B1124E97DC10029481B /* BusProvider.swift */,
+				A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */,
 				E2E0638425690898004ED4BC /* TopicManager.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
 		};
-		E2E06398256A5AD2004ED4BC /* Category */ = {
+		E217DCD425CFC83F0039C24F /* Imp */ = {
 			isa = PBXGroup;
 			children = (
-				E2E06399256A5AD2004ED4BC /* UIAlertController+Convenience.m */,
-				E2E0639A256A5AD2004ED4BC /* UIAlertController+Convenience.h */,
+				A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */,
+				E227CF1325DE693E004374F8 /* TopicComparator-MqttImp.swift */,
 			);
-			path = Category;
+			path = Imp;
+			sourceTree = "<group>";
+		};
+		E227CF1025DE68ED004374F8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A625193524E2B9C100C99934 /* EventBusProtocol.swift */,
+				E217DCCC25CFC6320039C24F /* TopicMatcherProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +207,7 @@
 					};
 					A6156E0724DD793D0031A5C3 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1220;
 						TestTargetID = A6156DEC24DD793A0031A5C3;
 					};
 				};
@@ -255,15 +257,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */,
-				E2E0639B256A5AD2004ED4BC /* UIAlertController+Convenience.m in Sources */,
 				E2E25B1224E97DC10029481B /* BusProvider.swift in Sources */,
+				E227CF1425DE693E004374F8 /* TopicComparator-MqttImp.swift in Sources */,
 				A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */,
 				A625192924E2780D00C99934 /* EventBus-NotificationImp.swift in Sources */,
 				A6156DF224DD793A0031A5C3 /* AppDelegate.m in Sources */,
 				A6156E0324DD793D0031A5C3 /* main.m in Sources */,
 				A6156DF524DD793A0031A5C3 /* SceneDelegate.m in Sources */,
-				E26F398B256A6034001B1D9B /* MessageReceiver.m in Sources */,
-				E26F3990256A6A65001B1D9B /* MessageSender.m in Sources */,
+				E217DCCD25CFC6320039C24F /* TopicMatcherProtocol.swift in Sources */,
 				E2E0638525690898004ED4BC /* TopicManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6156E0D24DD793D0031A5C3 /* EventBusExampleTests.m in Sources */,
+				E227CF1B25DE7AF5004374F8 /* EventBusTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +341,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -398,6 +400,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -460,6 +463,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EventBusExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -470,6 +474,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.EventBusExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventBusExampleTests/EventBusExampleTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventBusExample.app/EventBusExample";
 			};
@@ -480,6 +487,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EventBusExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -490,6 +498,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.EventBusExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventBusExampleTests/EventBusExampleTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventBusExample.app/EventBusExample";
 			};

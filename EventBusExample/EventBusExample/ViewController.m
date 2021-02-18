@@ -8,11 +8,8 @@
 
 #import "ViewController.h"
 #import "EventBusExample-Swift.h"
-#import "MessageSender.h"
-#import "MessageReceiver.h"
 @interface ViewController ()
-@property(nonatomic, strong) MessageSender *sender;
-@property(nonatomic, strong) MessageReceiver *receiver;
+
 
 @end
 
@@ -22,8 +19,6 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        _sender = [MessageSender new];
-        _receiver = [MessageReceiver new];
     }
     return self;
 }
@@ -31,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_sender sendMessage:@"/test/a"];
+    
 }
 
 

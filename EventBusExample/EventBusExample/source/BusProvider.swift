@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 @objcMembers
 class BusProvider: NSObject {
      static let instance: BusRepresentable = {

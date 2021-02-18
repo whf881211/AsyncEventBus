@@ -7,64 +7,18 @@
 //
 
 import Foundation
-class TopicMaanager: NSObject {
+class TopicManager: NSObject {
     
-    override init() {
+    private var topicComparator: TopicComparatorProtocol
+    
+    init(with comparaotr: TopicComparatorProtocol) {
+        topicComparator = comparaotr
         topicDict = [String: Int]()
         super.init()
     }
     
     private var topicDict: [String: Int]
 
-    /// /a/b对应情况有：
-    /// /a/b
-    /// /a/+
-    /// /a/+/b/c
-    /// /a/#
-    /// /a/b/#
-    
-    /// /a/b/c 对应 /a/#还不支持
-    private func compareTopicIsRelate(with Topic: String, compareTo TopicInList: String) -> Bool{
-        if Topic == TopicInList {
-            return true
-        }
-        let topicSplitArray = Topic.split(separator: Character.init("/"))
-        let topicPartCount = topicSplitArray.count
-        if (topicSplitArray.last == "$reply") {
-            ///是回复topic，只找一模一样的
-            return false
-        }
-        
-        let topicInListSplitArray = TopicInList.split(separator: Character.init("/"))
-        let topicInListPartCount = topicInListSplitArray.count
-        if topicInListSplitArray.last != "#" && topicInListPartCount < topicPartCount {
-            return false
-        }
-      
-        let topicInListCorrespondSubString = topicInListSplitArray[(topicSplitArray.count - 1)]
-        
-
-        ///先检查前面部分
-        for i in 0 ..< (topicSplitArray.count - 1) {
-            if topicInListSplitArray[i] != topicSplitArray[i] {
-                return false
-            }
-        }
-        ///检查是否满足 /a/+或/a/+/b/c
-        if topicInListCorrespondSubString == "+" {
-            return true
-        }
-        ///检查是否满足 /a/#
-        if topicPartCount == topicInListPartCount && topicInListCorrespondSubString == "#" {
-            return true
-        }
-        ///检查是否满足 /a/b/#
-        if (topicPartCount + 1) == topicInListPartCount && topicInListCorrespondSubString == topicSplitArray.last && topicInListSplitArray[(topicSplitArray.count)] == "#" {
-            return true
-        }
-        return false
-      
-    }
     
     func relateTopics(with Topic: String) -> Set<String> {
         var resSet: Set<String> = Set<String>()
@@ -72,12 +26,28 @@ class TopicMaanager: NSObject {
         let topicList = self.topicDict.keys
         
         for topicInList: String in topicList {
-            if self.compareTopicIsRelate(with: Topic, compareTo: topicInList) {
+            if isMatchedTopicForReply(Topic, isRelateTo: topicInList) {
+                resSet.insert(topicInList)
+            } else if topicComparator.topic(Topic, isRelateTo: topicInList) {
                 resSet.insert(topicInList)
             }
         }
         return resSet;
     }
+    
+    func isMatchedTopicForReply(_ replyTopic: String, isRelateTo publishedTopic: String) -> Bool {
+        let topicSplitArray = replyTopic.split(separator: Character.init("/"))
+        if topicSplitArray.last == "$reply" {
+            ///if is replyTopic, find the same one
+            if replyTopic == publishedTopic {
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
+    }
+    
     
     func preCheck(topic Topic: String) -> Bool {
         if Topic.count == 0 {

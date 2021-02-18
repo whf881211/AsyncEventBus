@@ -9,7 +9,7 @@
 import Foundation
 
 
-class EventMessage:  NSObject, BusMessageRepresentable {
+class EventMessage: NSObject, BusMessageRepresentable {
     var replyHandler: EventHandleBlock = {_ in }
     
     var topic: String = ""
@@ -50,8 +50,8 @@ class EventNotificationBus: NSObject, BusRepresentable {
     let messageKey: String = "EventBus.Message"
     var observeArray:  [NSObjectProtocol] = [NSObjectProtocol]()
     
-    lazy var topicManager: TopicMaanager = {
-        let manager = TopicMaanager.init()
+    lazy var topicManager: TopicManager = {
+        let manager = TopicManager.init(with: MqttTopicComparator.init())
         return manager
     }()
     
@@ -109,7 +109,7 @@ class EventNotificationBus: NSObject, BusRepresentable {
             NotificationCenter.default.removeObserver(observer as Any)
             self.topicManager.remove(topic: topic)
         }
-        ///返回disposable
+        ///return disposable
         let subscriber = EventBusSubscriber.init(topic, handler: handler, preblock: unsubscribePreBlock)
         return subscriber
     }
