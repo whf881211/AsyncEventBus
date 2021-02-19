@@ -18,114 +18,79 @@ class EventBusTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func subscribeTest(topic: String, expect: XCTestExpectation) {
-        self.bus.subscribe(topic: topic) { (message) in
+    func testEventBusReply() throws {
+        
+        let subscribeTopic: String = "/testTopic"
+        let publishTopic: String = "/testTopic"
+        let expect: XCTestExpectation = XCTestExpectation.init()
+
+        self.bus.subscribe(topic: subscribeTopic) { (message) in
+            message.reply(payload: nil)
+        }
+        
+        self.bus.publish(topic: publishTopic, payload: nil) { (message) in
             expect.fulfill()
         }
+        self.wait(for: [expect], timeout: 1)
     }
     
-    func publishTest(topic: String, expect: XCTestExpectation) {
-        self.bus.publish(topic: topic)
+    func testEventBusNotReply() throws {
+        
+        let subscribeTopic: String = "/testTopic"
+        let publishTopic: String = "/testTopic"
+        let expect: XCTestExpectation = XCTestExpectation.init()
+        expect.isInverted = true
+        
+        self.bus.subscribe(topic: subscribeTopic) { (message) in
+        }
+        
+        self.bus.publish(topic: publishTopic, payload: nil) { (message) in
+            expect.fulfill()
+        }
+        self.wait(for: [expect], timeout: 1)
+    }
+    
+    func testEventBusReplyDifferentTopic() throws {
+        
+        let subscribeTopic: String = "/testTopic"
+        let publishTopic: String = "/testTopicA"
+        let expect: XCTestExpectation = XCTestExpectation.init()
+        expect.isInverted = true
+        
+        self.bus.subscribe(topic: subscribeTopic) { (message) in
+            message.reply(payload: nil)
+        }
+        
+        self.bus.publish(topic: publishTopic, payload: nil) { (message) in
+            expect.fulfill()
+        }
         self.wait(for: [expect], timeout: 1)
     }
     
     
-    //测试同topic
-    func testEventBusMqtt_SameTopic() throws {
-        let subscribeTopic: String = "/testTopic"
-        let publishTopic: String = "/testTopic"
-
-        let expect: XCTestExpectation = XCTestExpectation.init()
-
-        self.subscribeTest(topic: subscribeTopic, expect: expect)
-        self.publishTest(topic: publishTopic, expect: expect)
-       
-    }
-    
-    //测试不同topic
-    func testEventBusMqtt_SameTopic1() throws {
-        let subscribeTopic: String = "/testTopic"
-        let publishTopic: String = "/testTopicAAA"
-
-        let expect: XCTestExpectation = XCTestExpectation.init()
+    func testEventBusReplySepcTopic() throws {
         
-        expect.isInverted = true
+        let subscribeTopic: String = "/testTopic/#"
+        let publishTopic: String = "/testTopic/a"
+        let publishTopicShouldReply: String = "/testTopic/b"
+
+        let expectNotCall: XCTestExpectation = XCTestExpectation.init()
+        expectNotCall.isInverted = true
+        let expectCall: XCTestExpectation = XCTestExpectation.init()
         
-        self.subscribeTest(topic: subscribeTopic, expect: expect)
-        self.publishTest(topic: publishTopic, expect: expect)       
-    }
-    
-    //测试#匹配符
-    func testEventBusMqtt_PoundTopic1() throws {
+        self.bus.subscribe(topic: subscribeTopic) { (message) in
+            if message.topic == publishTopicShouldReply {
+                message.reply(payload: nil)
+            }
+        }
         
-        let subscribeTopic: String = "/#"
-        let publishTopic: String = "/a"
-
-        let expect: XCTestExpectation = XCTestExpectation.init()
-
-        self.subscribeTest(topic: subscribeTopic, expect: expect)
-        self.publishTest(topic: publishTopic, expect: expect)
-    }
-    
-    //测试#匹配符
-    func testEventBusMqtt_PoundTopic2() throws {
+        self.bus.publish(topic: publishTopic, payload: nil) { (message) in
+            expectNotCall.fulfill()
+        }
         
-        let subscribeTopic: String = "/a/b/#"
-        let publishTopic: String = "/a/b/c"
-
-        let expect: XCTestExpectation = XCTestExpectation.init()
-
-        self.subscribeTest(topic: subscribeTopic, expect: expect)
-        self.publishTest(topic: publishTopic, expect: expect)
+        self.bus.publish(topic: publishTopicShouldReply, payload: nil) { (message) in
+            expectCall.fulfill()
+        }
+        self.wait(for: [expectCall, expectNotCall], timeout: 1)
     }
-   
-    
-    //测试#匹配符
-    func testEventBusMqtt_PoundTopic3() throws {
-        
-        let subscribeTopic: String = "/a/b/#"
-        let publishTopic: String = "/a/b/c/d/e"
-
-        let expect: XCTestExpectation = XCTestExpectation.init()
-
-        self.subscribeTest(topic: subscribeTopic, expect: expect)
-        self.publishTest(topic: publishTopic, expect: expect)
-    }
-    
-    //测试#匹配符
-    func testEventBusMqtt_PoundTopic4() throws {
-        
-        let subscribeTopic: String = "/a/b/#"
-        let publishTopic: String = "/a/b"
-
-        let expect: XCTestExpectation = XCTestExpectation.init()
-
-        self.subscribeTest(topic: subscribeTopic, expect: expect)
-        self.publishTest(topic: publishTopic, expect: expect)
-    }
-    
-    //测试+匹配符
-    func testEventBusMqtt_PlusTopic1() throws {
-        let subscribeTopic: String = "/a/+"
-        let publishTopic: String = "/a/b"
-
-        let expect: XCTestExpectation = XCTestExpectation.init()
-
-        self.subscribeTest(topic: subscribeTopic, expect: expect)
-        self.publishTest(topic: publishTopic, expect: expect)
-    }
-    
-    //测试+匹配符
-    func testEventBusMqtt_PlusTopic2() throws {
-        let subscribeTopic: String = "/a/+/c"
-        let publishTopic: String = "/a/b/c"
-
-        let expect: XCTestExpectation = XCTestExpectation.init()
-
-        self.subscribeTest(topic: subscribeTopic, expect: expect)
-        self.publishTest(topic: publishTopic, expect: expect)
-    }
-
-
-
 }

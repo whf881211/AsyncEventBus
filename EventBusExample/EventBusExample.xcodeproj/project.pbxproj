@@ -15,6 +15,7 @@
 		A6156E0324DD793D0031A5C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0224DD793D0031A5C3 /* main.m */; };
 		A625192924E2780D00C99934 /* EventBus-NotificationImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */; };
 		A625193624E2B9C100C99934 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625193524E2B9C100C99934 /* EventBusProtocol.swift */; };
+		A6464BE425DF9DC700193DDB /* EventBusMqttTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6464BE325DF9DC700193DDB /* EventBusMqttTest.swift */; };
 		E217DCCD25CFC6320039C24F /* TopicMatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217DCCC25CFC6320039C24F /* TopicMatcherProtocol.swift */; };
 		E227CF1425DE693E004374F8 /* TopicComparator-MqttImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227CF1325DE693E004374F8 /* TopicComparator-MqttImp.swift */; };
 		E227CF1B25DE7AF5004374F8 /* EventBusTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227CF1A25DE7AF5004374F8 /* EventBusTest.swift */; };
@@ -49,6 +50,7 @@
 		A625192724E2780C00C99934 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		A625192824E2780D00C99934 /* EventBus-NotificationImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventBus-NotificationImp.swift"; sourceTree = "<group>"; };
 		A625193524E2B9C100C99934 /* EventBusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusProtocol.swift; sourceTree = "<group>"; };
+		A6464BE325DF9DC700193DDB /* EventBusMqttTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBusMqttTest.swift; sourceTree = "<group>"; };
 		E217DCCC25CFC6320039C24F /* TopicMatcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicMatcherProtocol.swift; sourceTree = "<group>"; };
 		E227CF1325DE693E004374F8 /* TopicComparator-MqttImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopicComparator-MqttImp.swift"; sourceTree = "<group>"; };
 		E227CF1925DE7AF4004374F8 /* EventBusExampleTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBusExampleTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		A6156E0B24DD793D0031A5C3 /* EventBusExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				A6464BE325DF9DC700193DDB /* EventBusMqttTest.swift */,
 				A6156E0E24DD793D0031A5C3 /* Info.plist */,
 				E227CF1A25DE7AF5004374F8 /* EventBusTest.swift */,
 				E227CF1925DE7AF4004374F8 /* EventBusExampleTests-Bridging-Header.h */,
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E227CF1B25DE7AF5004374F8 /* EventBusTest.swift in Sources */,
+				A6464BE425DF9DC700193DDB /* EventBusMqttTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
