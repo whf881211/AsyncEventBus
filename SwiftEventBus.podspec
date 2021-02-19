@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.swift_versions = "4.0"
   spec.source       = { :git => "https://github.com/whf881211/SwiftEventBus.git", :tag => "#{spec.version}" }
-  spec.source_files  = "EventBusExample/source/*", "EventBusExample/source/Protocol/*", "EventBusExample/source/Imp/*"
+  spec.source_files  = "EventBusExample/EventBusExample/source/*", "EventBusExample/EventBusExample/source/Protocol/*", "EventBusExample/EventBusExample/source/Imp/*"
   spec.exclude_files = ""
   spec.requires_arc = true
 
