@@ -2,7 +2,7 @@
 //  TopicManager.swift
 //  EventBusExample
 //
-//  Created by 王浩沣 on 2020/11/21.
+//  Created by ryanhfwang on 2020/11/21.
 //  Copyright © 2020 ryanhfwang. All rights reserved.
 //
 

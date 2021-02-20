@@ -8,11 +8,11 @@
 
 import Foundation
 
-typealias EventHandleBlock = (BusMessageRepresentable) -> Void
+public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
 
 
 ///用于取消订阅
-@objc protocol SubscribeDisposable {
+@objc public protocol SubscribeDisposable {
     var topic: String { get }
     var handler: EventHandleBlock? {get }
     
@@ -20,7 +20,7 @@ typealias EventHandleBlock = (BusMessageRepresentable) -> Void
     func unsubscribe()
 }
 
-@objc protocol BusRepresentable {
+@objc public protocol BusRepresentable {
     
     /// Subscribe
     /// 返回的subscriber可用于取消订阅
@@ -39,7 +39,7 @@ typealias EventHandleBlock = (BusMessageRepresentable) -> Void
     func publish(topic: String, payload: Any?, replyHandler: @escaping EventHandleBlock)
 }
 
-@objc protocol BusMessageRepresentable {
+@objc public protocol BusMessageRepresentable {
     var topic: String { get }
     var payload: Any? { get }
     func reply(payload: Any?)

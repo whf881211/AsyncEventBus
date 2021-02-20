@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "EventBusExample-Swift.h"
+#import <AsyncEventBus/AsyncEventBus.h>
 @interface ViewController ()
 
 

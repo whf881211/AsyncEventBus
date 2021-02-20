@@ -2,13 +2,13 @@
 //  EventBusTest.swift
 //  EventBusExampleTests
 //
-//  Created by 王浩沣 on 2021/2/18.
+//  Created by ryanhfwang on 2021/2/18.
 //  Copyright © 2021 ryanhfwang. All rights reserved.
 //
 import XCTest
-@testable import EventBusExample
+@testable import AsyncEventBus
 
-class EventBusMqttTest: XCTestCase {
+class AsyncEventBusMqttTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
