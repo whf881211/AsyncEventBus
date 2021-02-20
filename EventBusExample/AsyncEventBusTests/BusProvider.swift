@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+@testable import AsyncEventBus
 
 @objcMembers
 class BusProvider: NSObject {
@@ -15,15 +15,9 @@ class BusProvider: NSObject {
         let instance = EventNotificationBus()
         return instance
       }()
-    
-    static let clientId: String = {
-        let str = UIDevice.current.identifierForVendor?.uuidString
-        return str ?? ""
-    }()
-    
 }
 
-public extension NSObject {
+extension NSObject {
     @objc var bus: BusRepresentable {
         return BusProvider.instance
     }

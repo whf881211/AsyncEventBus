@@ -18,8 +18,10 @@ class EventMessage: NSObject, BusMessageRepresentable {
     
     var replyTopic: String = ""
     
+    weak var senderBus: BusRepresentable?
+    
     func reply(payload: Any?) {
-        self.bus.publish(topic: replyTopic, payload: payload)
+        senderBus?.publish(topic: replyTopic, payload: payload)
     }
     
 }
@@ -58,6 +60,7 @@ class EventNotificationBus: NSObject, BusRepresentable {
     func publish(topic: String) {
         let message = EventMessage.init()
         message.topic = topic
+        message.senderBus = self
         _publishMessage(message)
     }
     
@@ -65,6 +68,7 @@ class EventNotificationBus: NSObject, BusRepresentable {
         let message = EventMessage.init()
         message.topic = topic
         message.payload = payload
+        message.senderBus = self
         _publishMessage(message)
     }
     
@@ -74,7 +78,8 @@ class EventNotificationBus: NSObject, BusRepresentable {
         message.payload = payload
         message.replyHandler = replyHandler
         message.replyTopic = topic + "/$reply"
-        self.bus.subscribe(topic: message.replyTopic, handler: replyHandler)
+        message.senderBus = self
+        self.subscribe(topic: message.replyTopic, handler: replyHandler)
         _publishMessage(message)
     }
     
