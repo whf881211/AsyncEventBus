@@ -12,7 +12,7 @@ import Foundation
 @objcMembers
 class BusProvider: NSObject {
      static let instance: BusRepresentable = {
-        let instance = EventNotificationBus()
+        let instance = EventNotificationBus(with: "main")
         return instance
       }()
 }

@@ -11,7 +11,6 @@ import Foundation
 public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
 
 
-///用于取消订阅
 @objc public protocol SubscribeDisposable {
     var topic: String { get }
     var handler: EventHandleBlock? {get }
@@ -23,12 +22,17 @@ public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
 @objc public protocol BusRepresentable {
     
     /// Subscribe
-    /// 返回的subscriber可用于取消订阅
+    ///
+    /// SubscribeDisposable is used to unsubscribe.
     @discardableResult
     @objc(subscribeTopic: action:)
     func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable
     
+    
+    
     ///Publish
+    ///
+    ///
     @objc(publishTopic:)
     func publish(topic: String)
     
@@ -37,10 +41,30 @@ public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
     
     @objc(publishTopic: payload: replyHandler:)
     func publish(topic: String, payload: Any?, replyHandler: @escaping EventHandleBlock)
+    
+    
+    
+    ///Set LogPrinter
+    ///
+    ///Deliver a LogPrinter to print info
+    @objc(setLogPrinter:)
+    func setLogPrinter(with printer: LogPrinter)
 }
 
+
+
+///Message
+///
+///Subscirber may use reply method to reply the message.
 @objc public protocol BusMessageRepresentable {
     var topic: String { get }
     var payload: Any? { get }
     func reply(payload: Any?)
+}
+
+///LogPrinter
+///
+///
+@objc public protocol LogPrinter {
+    func print(info: String)
 }

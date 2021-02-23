@@ -2,7 +2,7 @@
 //  TopicMatcher-MqttImp.swift
 //  EventBusExample
 //
-//  Created by 王浩沣 on 2021/2/18.
+//  Created by ryanhfwang on 2021/2/18.
 //  Copyright © 2021 ryanhfwang. All rights reserved.
 //
 
@@ -29,7 +29,7 @@ class MqttTopicComparator: NSObject, TopicComparatorProtocol {
         return self.topic(topic, compareToPlusTopic: subscribedTopic)
     }
     
-    //匹配#
+    //Match #
     func topic(_ topic: String, compareToPoundTopic subscribedTopic: String) -> Bool {
         let topicSplitArray = topic.split(separator: Character.init("/"))
         
@@ -50,7 +50,7 @@ class MqttTopicComparator: NSObject, TopicComparatorProtocol {
         return true
     }
     
-    //匹配+
+    //Match +
     func topic(_ topic: String, compareToPlusTopic subscribedTopic: String) -> Bool {
         let topicSplitArray = topic.split(separator: Character.init("/"))
         

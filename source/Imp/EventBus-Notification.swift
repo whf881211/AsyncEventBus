@@ -48,10 +48,21 @@ class EventBusSubscriber: NSObject, SubscribeDisposable {
 
 
 class EventNotificationBus: NSObject, BusRepresentable {
-    let markedObject: String = "EventBus"
-    let messageKey: String = "EventBus.Message"
+    var markObject: String
+    var messageKey: String
+    var topicHeader: String
     var observeArray:  [NSObjectProtocol] = [NSObjectProtocol]()
+    weak var logPrinter: LogPrinter?
     
+    required init(with identifier: String) {
+        self.markObject = identifier
+        self.messageKey = identifier + ".EventBus.Message"
+        self.topicHeader = "$" + identifier
+        super.init()
+    }
+    func setLogPrinter(with printer: LogPrinter) {
+        logPrinter = printer
+    }
     lazy var topicManager: TopicManager = {
         let manager = TopicManager.init(with: MqttTopicComparator.init())
         return manager
@@ -61,7 +72,7 @@ class EventNotificationBus: NSObject, BusRepresentable {
         let message = EventMessage.init()
         message.topic = topic
         message.senderBus = self
-        _publishMessage(message)
+        publishMessage(message)
     }
     
     func publish(topic: String, payload: Any?) {
@@ -69,7 +80,7 @@ class EventNotificationBus: NSObject, BusRepresentable {
         message.topic = topic
         message.payload = payload
         message.senderBus = self
-        _publishMessage(message)
+        publishMessage(message)
     }
     
     func publish(topic: String, payload: Any?, replyHandler: @escaping (BusMessageRepresentable) -> Void) {
@@ -80,12 +91,12 @@ class EventNotificationBus: NSObject, BusRepresentable {
         message.replyTopic = topic + "/$reply"
         message.senderBus = self
         self.subscribe(topic: message.replyTopic, handler: replyHandler)
-        _publishMessage(message)
+        publishMessage(message)
     }
     
     lazy var workingQueue: OperationQueue = {
         let queue = OperationQueue.init();
-        queue.name = "EventBus.Dispatch.Queue"
+        queue.name = markObject + "EventBus.Dispatch.Queue"
         queue.maxConcurrentOperationCount = 1
         return queue
     }()
@@ -94,8 +105,8 @@ class EventNotificationBus: NSObject, BusRepresentable {
     @discardableResult
     func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable {
         ///Register Observer
-        weak var observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: topic), object: self.markedObject, queue: self.workingQueue) { [weak self] (notification) in
-            ///发送事件
+        weak var observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: topicHeader + topic), object: markObject, queue: workingQueue) { [weak self] (notification) in
+            ///Send Event
             guard let self = self else {
                 return
             }
@@ -110,7 +121,7 @@ class EventNotificationBus: NSObject, BusRepresentable {
             guard let self = self else {
                 return
             }
-            ///取消监听
+            ///remove Observer
             NotificationCenter.default.removeObserver(observer as Any)
             self.topicManager.remove(topic: topic)
         }
@@ -122,11 +133,11 @@ class EventNotificationBus: NSObject, BusRepresentable {
     func subscribe(replyTopic: String, replyHandler:@escaping EventHandleBlock) {
         ///Register Observer
         weak var observer: NSObjectProtocol?
-        observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: replyTopic), object: self.markedObject, queue: self.workingQueue) { (notification) in
-            ///取消监听
+        observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: topicHeader + replyTopic), object: markObject, queue: workingQueue) { (notification) in
+            ///remove Observer
             NotificationCenter.default.removeObserver(observer as Any)
             self.topicManager.remove(topic: replyTopic)
-            ///发送事件
+            ///Send Event
             if let messageRepresentable = notification.userInfo?[self.messageKey] as? BusMessageRepresentable{
                 EventNotificationBus.scheduleDistribute(block: replyHandler, argument: messageRepresentable)
             }
@@ -135,13 +146,17 @@ class EventNotificationBus: NSObject, BusRepresentable {
         let _ = self.topicManager.add(topic: replyTopic)
     }
     
-    func _publishMessage(_ message: BusMessageRepresentable) {
+    func publishMessage(_ message: BusMessageRepresentable) {
+        if !message.topic.hasPrefix("/") {
+            assert(false, "Topic must start with /")
+        }
         if message.topic.hasSuffix("/#") || message.topic.hasSuffix("/+") {
             assert(false, "Topic to publish can not has suffix # or +")
         }
+        logPrinter?.print(info: "【EventBus】publish message topic: " + message.topic + " payload: " + message.payload.debugDescription)
         let topicList = self.topicManager.relateTopics(with: message.topic)
         for topic: String in topicList {
-            NotificationCenter.default.post(name: Notification.Name(rawValue: topic), object: self.markedObject, userInfo: [self.messageKey:message])
+            NotificationCenter.default.post(name: Notification.Name(rawValue: topicHeader + topic), object: markObject, userInfo: [messageKey: message])
         }
     }
 }

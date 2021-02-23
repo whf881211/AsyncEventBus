@@ -19,8 +19,8 @@
 		A6D7B73A25E0E99D003B0B96 /* AsyncEventBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D7B72525E0E99C003B0B96 /* AsyncEventBus.framework */; };
 		A6D7B73B25E0E99D003B0B96 /* AsyncEventBus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6D7B72525E0E99C003B0B96 /* AsyncEventBus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A6D7B74825E0F213003B0B96 /* AsyncEventBusMqttTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6464BE325DF9DC700193DDB /* AsyncEventBusMqttTest.swift */; };
-		A6D7B77625E0F8C3003B0B96 /* TopicComparator-MqttImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B76E25E0F8C3003B0B96 /* TopicComparator-MqttImp.swift */; };
-		A6D7B77725E0F8C3003B0B96 /* EventBus-NotificationImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B76F25E0F8C3003B0B96 /* EventBus-NotificationImp.swift */; };
+		A6D7B77625E0F8C3003B0B96 /* TopicComparator-Mqtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B76E25E0F8C3003B0B96 /* TopicComparator-Mqtt.swift */; };
+		A6D7B77725E0F8C3003B0B96 /* EventBus-Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B76F25E0F8C3003B0B96 /* EventBus-Notification.swift */; };
 		A6D7B77925E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = A6D7B77125E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h */; };
 		A6D7B77A25E0F8C3003B0B96 /* TopicMatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77325E0F8C3003B0B96 /* TopicMatcherProtocol.swift */; };
 		A6D7B77B25E0F8C3003B0B96 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77425E0F8C3003B0B96 /* EventBusProtocol.swift */; };
@@ -85,8 +85,8 @@
 		A6D7B72D25E0E99D003B0B96 /* AsyncEventBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncEventBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D7B73425E0E99D003B0B96 /* AsyncEventBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncEventBusTests.swift; sourceTree = "<group>"; };
 		A6D7B73625E0E99D003B0B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6D7B76E25E0F8C3003B0B96 /* TopicComparator-MqttImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopicComparator-MqttImp.swift"; sourceTree = "<group>"; };
-		A6D7B76F25E0F8C3003B0B96 /* EventBus-NotificationImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBus-NotificationImp.swift"; sourceTree = "<group>"; };
+		A6D7B76E25E0F8C3003B0B96 /* TopicComparator-Mqtt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopicComparator-Mqtt.swift"; sourceTree = "<group>"; };
+		A6D7B76F25E0F8C3003B0B96 /* EventBus-Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBus-Notification.swift"; sourceTree = "<group>"; };
 		A6D7B77025E0F8C3003B0B96 /* BusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusProvider.swift; sourceTree = "<group>"; };
 		A6D7B77125E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6D7B77325E0F8C3003B0B96 /* TopicMatcherProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicMatcherProtocol.swift; sourceTree = "<group>"; };
@@ -185,9 +185,9 @@
 		A6D7B76C25E0F8C3003B0B96 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				A6D7B77225E0F8C3003B0B96 /* Protocol */,
 				A6D7B76D25E0F8C3003B0B96 /* Imp */,
 				A6D7B77125E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h */,
-				A6D7B77225E0F8C3003B0B96 /* Protocol */,
 				A6D7B77525E0F8C3003B0B96 /* TopicManager.swift */,
 			);
 			name = source;
@@ -197,8 +197,8 @@
 		A6D7B76D25E0F8C3003B0B96 /* Imp */ = {
 			isa = PBXGroup;
 			children = (
-				A6D7B76E25E0F8C3003B0B96 /* TopicComparator-MqttImp.swift */,
-				A6D7B76F25E0F8C3003B0B96 /* EventBus-NotificationImp.swift */,
+				A6D7B76E25E0F8C3003B0B96 /* TopicComparator-Mqtt.swift */,
+				A6D7B76F25E0F8C3003B0B96 /* EventBus-Notification.swift */,
 			);
 			path = Imp;
 			sourceTree = "<group>";
@@ -369,8 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6D7B77625E0F8C3003B0B96 /* TopicComparator-MqttImp.swift in Sources */,
-				A6D7B77725E0F8C3003B0B96 /* EventBus-NotificationImp.swift in Sources */,
+				A6D7B77625E0F8C3003B0B96 /* TopicComparator-Mqtt.swift in Sources */,
+				A6D7B77725E0F8C3003B0B96 /* EventBus-Notification.swift in Sources */,
 				A6D7B77B25E0F8C3003B0B96 /* EventBusProtocol.swift in Sources */,
 				A6D7B77C25E0F8C3003B0B96 /* TopicManager.swift in Sources */,
 				A6D7B77A25E0F8C3003B0B96 /* TopicMatcherProtocol.swift in Sources */,
