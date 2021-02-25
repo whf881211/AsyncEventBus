@@ -47,35 +47,37 @@ class EventBusSubscriber: NSObject, SubscribeDisposable {
 }
 
 
-class EventNotificationBus: NSObject, BusRepresentable {
+public class EventNotificationBus: NSObject, BusRepresentable {
     var markObject: String
     var messageKey: String
     var topicHeader: String
     var observeArray:  [NSObjectProtocol] = [NSObjectProtocol]()
     weak var logPrinter: LogPrinter?
     
-    required init(with identifier: String) {
+    public required init(with identifier: String) {
         self.markObject = identifier
         self.messageKey = identifier + ".EventBus.Message"
         self.topicHeader = "$" + identifier
         super.init()
     }
-    func setLogPrinter(with printer: LogPrinter) {
+    
+    public func setLogPrinter(with printer: LogPrinter) {
         logPrinter = printer
     }
+    
     lazy var topicManager: TopicManager = {
         let manager = TopicManager.init(with: MqttTopicComparator.init())
         return manager
     }()
     
-    func publish(topic: String) {
+    public func publish(topic: String) {
         let message = EventMessage.init()
         message.topic = topic
         message.senderBus = self
         publishMessage(message)
     }
     
-    func publish(topic: String, payload: Any?) {
+    public func publish(topic: String, payload: Any?) {
         let message = EventMessage.init()
         message.topic = topic
         message.payload = payload
@@ -83,7 +85,7 @@ class EventNotificationBus: NSObject, BusRepresentable {
         publishMessage(message)
     }
     
-    func publish(topic: String, payload: Any?, replyHandler: @escaping (BusMessageRepresentable) -> Void) {
+    public func publish(topic: String, payload: Any?, replyHandler: @escaping (BusMessageRepresentable) -> Void) {
         let message = EventMessage.init()
         message.topic = topic
         message.payload = payload
@@ -103,7 +105,7 @@ class EventNotificationBus: NSObject, BusRepresentable {
         
     ///订阅
     @discardableResult
-    func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable {
+    public func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable {
         ///Register Observer
         weak var observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: topicHeader + topic), object: markObject, queue: workingQueue) { [weak self] (notification) in
             ///Send Event

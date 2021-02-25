@@ -94,6 +94,29 @@ class AsyncEventBusTests: XCTestCase {
         }
         self.wait(for: [expectCall, expectNotCall], timeout: 1)
     }
+    
+    func testMultiBus() throws {
+        
+        let subscribeTopic: String = "/testTopic"
+        let publishTopic: String = "/testTopic"
+        let expect: XCTestExpectation = XCTestExpectation.init()
+        expect.isInverted = true
+        
+        let seExpect: XCTestExpectation = XCTestExpectation.init()
+        
+        let bus = EventNotificationBus.init(with: "secondary")
+        bus.subscribe(topic: subscribeTopic) { (message) in
+            seExpect.fulfill()
+        }
+        
+        self.bus.subscribe(topic: subscribeTopic) { (message) in
+            expect.fulfill()
+        }
+        
+        bus.publish(topic: publishTopic)
+
+        self.wait(for: [expect], timeout: 1)
+    }
 }
 
 
