@@ -15,8 +15,6 @@ Pod::Spec.new do |spec|
   spec.swift_versions = "4.0"
   spec.source       = { :git => "https://github.com/whf881211/AsyncEventBus.git", :tag => spec.version.to_s }
   spec.source_files  = "source/*.swift", "source/**/*.swift"
-  spec.exclude_files = ""
-  spec.requires_arc = true
   spec.static_framework  =  true
 
 
