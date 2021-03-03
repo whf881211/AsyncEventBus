@@ -46,7 +46,7 @@ class EventBusSubscriber: NSObject, SubscribeDisposable {
     }
 }
 
-
+@objc
 public class EventNotificationBus: NSObject, BusRepresentable {
     var markObject: String
     var messageKey: String

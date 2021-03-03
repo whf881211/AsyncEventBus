@@ -11,14 +11,6 @@ import Foundation
 public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
 
 
-@objc public protocol SubscribeDisposable {
-    var topic: String { get }
-    var handler: EventHandleBlock? {get }
-    
-    @objc(unsubscribe)
-    func unsubscribe()
-}
-
 @objc public protocol BusRepresentable {
     
     /// Subscribe
@@ -27,7 +19,7 @@ public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
     @discardableResult
     @objc(subscribeTopic: action:)
     func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable
-    
+
     
     
     ///Publish
@@ -49,22 +41,4 @@ public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
     ///Deliver a LogPrinter to print info
     @objc(setLogPrinter:)
     func setLogPrinter(with printer: LogPrinter)
-}
-
-
-
-///Message
-///
-///Subscirber may use reply method to reply the message.
-@objc public protocol BusMessageRepresentable {
-    var topic: String { get }
-    var payload: Any? { get }
-    func reply(payload: Any?)
-}
-
-///LogPrinter
-///
-///
-@objc public protocol LogPrinter {
-    func print(info: String)
 }

@@ -26,6 +26,9 @@
 		A6D7B77B25E0F8C3003B0B96 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77425E0F8C3003B0B96 /* EventBusProtocol.swift */; };
 		A6D7B77C25E0F8C3003B0B96 /* TopicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77525E0F8C3003B0B96 /* TopicManager.swift */; };
 		A6D7B82125E103F4003B0B96 /* BusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77025E0F8C3003B0B96 /* BusProvider.swift */; };
+		E268430825EFE59A00DE5290 /* EventBusMessageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268430725EFE59A00DE5290 /* EventBusMessageProtocol.swift */; };
+		E268430C25EFE5A800DE5290 /* EventBusDisposableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268430B25EFE5A800DE5290 /* EventBusDisposableProtocol.swift */; };
+		E268431425EFE61600DE5290 /* EventBusLogPrinterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268431325EFE61600DE5290 /* EventBusLogPrinterProtocol.swift */; };
 		E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AE83FA252E0F62000DE71A /* ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +95,9 @@
 		A6D7B77325E0F8C3003B0B96 /* TopicMatcherProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicMatcherProtocol.swift; sourceTree = "<group>"; };
 		A6D7B77425E0F8C3003B0B96 /* EventBusProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBusProtocol.swift; sourceTree = "<group>"; };
 		A6D7B77525E0F8C3003B0B96 /* TopicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicManager.swift; sourceTree = "<group>"; };
+		E268430725EFE59A00DE5290 /* EventBusMessageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusMessageProtocol.swift; sourceTree = "<group>"; };
+		E268430B25EFE5A800DE5290 /* EventBusDisposableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusDisposableProtocol.swift; sourceTree = "<group>"; };
+		E268431325EFE61600DE5290 /* EventBusLogPrinterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusLogPrinterProtocol.swift; sourceTree = "<group>"; };
 		E2AE83F9252E0F62000DE71A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E2AE83FA252E0F62000DE71A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +214,9 @@
 			children = (
 				A6D7B77325E0F8C3003B0B96 /* TopicMatcherProtocol.swift */,
 				A6D7B77425E0F8C3003B0B96 /* EventBusProtocol.swift */,
+				E268430725EFE59A00DE5290 /* EventBusMessageProtocol.swift */,
+				E268430B25EFE5A800DE5290 /* EventBusDisposableProtocol.swift */,
+				E268431325EFE61600DE5290 /* EventBusLogPrinterProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -369,10 +378,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E268430C25EFE5A800DE5290 /* EventBusDisposableProtocol.swift in Sources */,
 				A6D7B77625E0F8C3003B0B96 /* TopicComparator-Mqtt.swift in Sources */,
+				E268430825EFE59A00DE5290 /* EventBusMessageProtocol.swift in Sources */,
 				A6D7B77725E0F8C3003B0B96 /* EventBus-Notification.swift in Sources */,
 				A6D7B77B25E0F8C3003B0B96 /* EventBusProtocol.swift in Sources */,
 				A6D7B77C25E0F8C3003B0B96 /* TopicManager.swift in Sources */,
+				E268431425EFE61600DE5290 /* EventBusLogPrinterProtocol.swift in Sources */,
 				A6D7B77A25E0F8C3003B0B96 /* TopicMatcherProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
