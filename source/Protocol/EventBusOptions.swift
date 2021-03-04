@@ -2,7 +2,7 @@
 //  EventBusOption.swift
 //  AsyncEventBus
 //
-//  Created by 王浩沣 on 2021/3/4.
+//  Created by ryanhfwang on 2021/3/4.
 //
 
 import Foundation

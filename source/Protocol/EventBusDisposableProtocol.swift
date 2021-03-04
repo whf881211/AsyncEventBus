@@ -2,7 +2,7 @@
 //  EventBusSubscriberProtocol.swift
 //  AsyncEventBus
 //
-//  Created by 王浩沣 on 2021/3/3.
+//  Created by ryanhfwang on 2021/3/3.
 //  Copyright © 2021 ryanhfwang. All rights reserved.
 //
 

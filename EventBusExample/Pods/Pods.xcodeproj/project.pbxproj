@@ -484,7 +484,29 @@
 			};
 			name = Debug;
 		};
-		07EA36D43E72F367EFBEA00DD10433F0 /* Debug */ = {
+		2DFF06FBC7CD7F8971A2FCB3D324323E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22379E22A290BEE883EE714AB97FFAE2 /* Pods-EventBusExampleTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77D254326EB554A9863EF1F4332B3C7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2A9D6555E465A53011384EC4E1CE6175 /* AsyncEventBus.debug.xcconfig */;
 			buildSettings = {
@@ -503,12 +525,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		12298EEF926A0F2F2A17068F9FD9A2F1 /* Release */ = {
+		8339F9B78CBE2A3B7E06717DEAC4B3FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D0C66122D4EE5E182D0589FB8BC90B1 /* AsyncEventBus.release.xcconfig */;
 			buildSettings = {
@@ -527,29 +549,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		2DFF06FBC7CD7F8971A2FCB3D324323E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22379E22A290BEE883EE714AB97FFAE2 /* Pods-EventBusExampleTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -707,8 +707,8 @@
 		647FAB932A4C1CF7C289BBEEAECB9B43 /* Build configuration list for PBXNativeTarget "AsyncEventBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07EA36D43E72F367EFBEA00DD10433F0 /* Debug */,
-				12298EEF926A0F2F2A17068F9FD9A2F1 /* Release */,
+				77D254326EB554A9863EF1F4332B3C7A /* Debug */,
+				8339F9B78CBE2A3B7E06717DEAC4B3FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
