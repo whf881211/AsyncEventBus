@@ -11,14 +11,14 @@ import Foundation
 
 @objcMembers
 class BusProvider: NSObject {
-     static let instance: BusRepresentable = {
-        let instance = EventNotificationBus(with: "main")
+     static let instance: EventBus = {
+        let instance = NotificationEventBus(with: "main")
         return instance
       }()
 }
 
 extension NSObject {
-    @objc var bus: BusRepresentable {
+    @objc var bus: EventBus {
         return BusProvider.instance
     }
 }

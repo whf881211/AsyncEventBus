@@ -104,7 +104,7 @@ class AsyncEventBusTests: XCTestCase {
         
         let seExpect: XCTestExpectation = XCTestExpectation.init()
         
-        let bus = EventNotificationBus.init(with: "secondary")
+        let bus = NotificationEventBus.init(with: "secondary")
         bus.subscribe(topic: subscribeTopic) { (message) in
             seExpect.fulfill()
         }
