@@ -52,6 +52,7 @@ public class NotificationEventBus: NSObject, EventBus {
     var topicHeader: String
     var observeArray:  [NSObjectProtocol] = [NSObjectProtocol]()
     weak var logPrinter: LogPrinter?
+    var isForceSync: Bool = false //used for unit test
     
     public required init(with identifier: String) {
         self.markObject = identifier
@@ -123,7 +124,7 @@ public class NotificationEventBus: NSObject, EventBus {
             }
             if let messageRepresentable = notification.userInfo?[self.messageKey] as? BusMessage{
                 if (options?.filter?(messageRepresentable) ?? true) {
-                    NotificationEventBus.scheduleDistribute(block: handler, argument: messageRepresentable)
+                    self.distributeEvent(handler: handler, message: messageRepresentable)
                 }
             }
         }
@@ -157,14 +158,31 @@ public class NotificationEventBus: NSObject, EventBus {
             NotificationCenter.default.post(name: Notification.Name(rawValue: topicHeader + topic), object: markObject, userInfo: [messageKey: message])
         }
     }
+    func distributeEvent(handler: @escaping EventHandleBlock, message: BusMessage ) {
+        if isForceSync {
+            NotificationEventBus.syncDistribute(block: handler, argument: message)
+        } else {
+            NotificationEventBus.asyncDistribute(block: handler, argument: message)
+        }
+    }
+    
 }
 
 extension NotificationEventBus  {
-    private class func scheduleDistribute( block: @escaping EventHandleBlock, argument: BusMessage) {
+    private class func asyncDistribute( block: @escaping EventHandleBlock, argument: BusMessage) {
         DispatchQueue.main.async {
             block(argument)
         }
     }
 }
 
+// use in UnitTest
+extension NotificationEventBus  {
+    public func forceSync(_ sync: Bool) {
+        isForceSync = true
+    }
+    private class func syncDistribute( block: @escaping EventHandleBlock, argument: BusMessage) {
+        block(argument)
+    }
+}
 

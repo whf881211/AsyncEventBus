@@ -160,6 +160,26 @@ class AsyncEventBusTests: XCTestCase {
         }
         self.wait(for: [expect], timeout: 1)
     }
+    
+    func testEventBusForceSync() throws {
+        if let bus = self.bus as? NotificationEventBus  {
+            bus.isForceSync = true
+        }
+        var testVar = 1
+        let subscribeTopic: String = "/testTopic"
+        let publishTopic: String = "/testTopic"
+
+        self.bus.subscribe(topic: subscribeTopic) { (message) in
+            testVar = 2
+        }
+        
+        self.bus.publish(topic: publishTopic)
+        XCTAssertEqual(testVar, 2)
+        
+        if let bus = self.bus as? NotificationEventBus  {
+            bus.isForceSync = false
+        }
+    }
 }
 
 
