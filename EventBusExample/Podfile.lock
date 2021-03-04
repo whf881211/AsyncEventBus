@@ -1,0 +1,16 @@
+PODS:
+  - AsyncEventBus (0.0.6)
+
+DEPENDENCIES:
+  - AsyncEventBus (from `../`)
+
+EXTERNAL SOURCES:
+  AsyncEventBus:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AsyncEventBus: 6915e0c2e2976abdddfef76a3f7bd0f22bc2a92a
+
+PODFILE CHECKSUM: 2b553f95882cceb0ee7c2f83a54f52eb13c383ee
+
+COCOAPODS: 1.10.1

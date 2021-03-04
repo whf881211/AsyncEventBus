@@ -13,46 +13,24 @@
 		A6156DFD24DD793D0031A5C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6156DFC24DD793D0031A5C3 /* Assets.xcassets */; };
 		A6156E0024DD793D0031A5C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */; };
 		A6156E0324DD793D0031A5C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6156E0224DD793D0031A5C3 /* main.m */; };
-		A6D7B72E25E0E99D003B0B96 /* AsyncEventBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D7B72525E0E99C003B0B96 /* AsyncEventBus.framework */; };
-		A6D7B73525E0E99D003B0B96 /* AsyncEventBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B73425E0E99D003B0B96 /* AsyncEventBusTests.swift */; };
-		A6D7B73725E0E99D003B0B96 /* AsyncEventBus.h in Headers */ = {isa = PBXBuildFile; fileRef = A6D7B72725E0E99C003B0B96 /* AsyncEventBus.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6D7B73A25E0E99D003B0B96 /* AsyncEventBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D7B72525E0E99C003B0B96 /* AsyncEventBus.framework */; };
-		A6D7B73B25E0E99D003B0B96 /* AsyncEventBus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6D7B72525E0E99C003B0B96 /* AsyncEventBus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A6D7B74825E0F213003B0B96 /* AsyncEventBusMqttTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6464BE325DF9DC700193DDB /* AsyncEventBusMqttTest.swift */; };
-		A6D7B77625E0F8C3003B0B96 /* TopicComparator-Mqtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B76E25E0F8C3003B0B96 /* TopicComparator-Mqtt.swift */; };
-		A6D7B77725E0F8C3003B0B96 /* EventBus-Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B76F25E0F8C3003B0B96 /* EventBus-Notification.swift */; };
-		A6D7B77925E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = A6D7B77125E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h */; };
-		A6D7B77A25E0F8C3003B0B96 /* TopicMatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77325E0F8C3003B0B96 /* TopicMatcherProtocol.swift */; };
-		A6D7B77B25E0F8C3003B0B96 /* EventBusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77425E0F8C3003B0B96 /* EventBusProtocol.swift */; };
-		A6D7B77C25E0F8C3003B0B96 /* TopicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77525E0F8C3003B0B96 /* TopicManager.swift */; };
-		A6D7B82125E103F4003B0B96 /* BusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77025E0F8C3003B0B96 /* BusProvider.swift */; };
-		E268430825EFE59A00DE5290 /* EventBusMessageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268430725EFE59A00DE5290 /* EventBusMessageProtocol.swift */; };
-		E268430C25EFE5A800DE5290 /* EventBusDisposableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268430B25EFE5A800DE5290 /* EventBusDisposableProtocol.swift */; };
-		E268431425EFE61600DE5290 /* EventBusLogPrinterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268431325EFE61600DE5290 /* EventBusLogPrinterProtocol.swift */; };
+		ADC1924B3E90FF907F34C505 /* libPods-EventBusExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97685BA7B4833226BC89C703 /* libPods-EventBusExample.a */; };
+		E24F927B25F0A5EC00FAAEF4 /* AsyncEventBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B73425E0E99D003B0B96 /* AsyncEventBusTests.swift */; };
+		E24F927C25F0A5EC00FAAEF4 /* BusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7B77025E0F8C3003B0B96 /* BusProvider.swift */; };
+		E24F927D25F0A5EC00FAAEF4 /* AsyncEventBusMqttTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6464BE325DF9DC700193DDB /* AsyncEventBusMqttTest.swift */; };
+		E297A70925F0A7B4006E5BB9 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297A70825F0A7B4006E5BB9 /* ExampleViewController.swift */; };
+		E297A71025F0AFE9006E5BB9 /* ExampleSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297A70F25F0AFE9006E5BB9 /* ExampleSender.swift */; };
+		E297A7B825F0BAB9006E5BB9 /* BusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297A7B725F0BAB9006E5BB9 /* BusProvider.swift */; };
 		E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AE83FA252E0F62000DE71A /* ViewController.m */; };
+		F6EB55E3B0440DE7A712040E /* libPods-EventBusExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C20E78AADD180D562E946C6 /* libPods-EventBusExampleTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A6D7B72F25E0E99D003B0B96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6156DE524DD793A0031A5C3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A6D7B72425E0E99C003B0B96;
-			remoteInfo = AsyncEventBus;
-		};
-		A6D7B73125E0E99D003B0B96 /* PBXContainerItemProxy */ = {
+		E24F927525F0A5E300FAAEF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6156DE524DD793A0031A5C3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A6156DEC24DD793A0031A5C3;
 			remoteInfo = EventBusExample;
-		};
-		A6D7B73825E0E99D003B0B96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6156DE524DD793A0031A5C3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A6D7B72425E0E99C003B0B96;
-			remoteInfo = AsyncEventBus;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -63,7 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A6D7B73B25E0E99D003B0B96 /* AsyncEventBus.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +48,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E13C7D192C8A03547D51D1D /* Pods-EventBusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventBusExample.release.xcconfig"; path = "Target Support Files/Pods-EventBusExample/Pods-EventBusExample.release.xcconfig"; sourceTree = "<group>"; };
+		7552ACB3939F84BB8BE51B81 /* Pods-EventBusExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventBusExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-EventBusExampleTests/Pods-EventBusExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A6F871CE0B14A64A290CD55 /* Pods-EventBusExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventBusExample.debug.xcconfig"; path = "Target Support Files/Pods-EventBusExample/Pods-EventBusExample.debug.xcconfig"; sourceTree = "<group>"; };
+		7C20E78AADD180D562E946C6 /* libPods-EventBusExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EventBusExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97685BA7B4833226BC89C703 /* libPods-EventBusExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EventBusExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6156DED24DD793A0031A5C3 /* EventBusExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventBusExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6156DF024DD793A0031A5C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A6156DF124DD793A0031A5C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,22 +64,15 @@
 		A6156E0124DD793D0031A5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6156E0224DD793D0031A5C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6464BE325DF9DC700193DDB /* AsyncEventBusMqttTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncEventBusMqttTest.swift; sourceTree = "<group>"; };
-		A6D7B72525E0E99C003B0B96 /* AsyncEventBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsyncEventBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6D7B72725E0E99C003B0B96 /* AsyncEventBus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncEventBus.h; sourceTree = "<group>"; };
-		A6D7B72825E0E99C003B0B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6D7B72D25E0E99D003B0B96 /* AsyncEventBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncEventBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D7B73425E0E99D003B0B96 /* AsyncEventBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncEventBusTests.swift; sourceTree = "<group>"; };
-		A6D7B73625E0E99D003B0B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6D7B76E25E0F8C3003B0B96 /* TopicComparator-Mqtt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopicComparator-Mqtt.swift"; sourceTree = "<group>"; };
-		A6D7B76F25E0F8C3003B0B96 /* EventBus-Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBus-Notification.swift"; sourceTree = "<group>"; };
 		A6D7B77025E0F8C3003B0B96 /* BusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusProvider.swift; sourceTree = "<group>"; };
-		A6D7B77125E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		A6D7B77325E0F8C3003B0B96 /* TopicMatcherProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicMatcherProtocol.swift; sourceTree = "<group>"; };
-		A6D7B77425E0F8C3003B0B96 /* EventBusProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBusProtocol.swift; sourceTree = "<group>"; };
-		A6D7B77525E0F8C3003B0B96 /* TopicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicManager.swift; sourceTree = "<group>"; };
-		E268430725EFE59A00DE5290 /* EventBusMessageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusMessageProtocol.swift; sourceTree = "<group>"; };
-		E268430B25EFE5A800DE5290 /* EventBusDisposableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusDisposableProtocol.swift; sourceTree = "<group>"; };
-		E268431325EFE61600DE5290 /* EventBusLogPrinterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusLogPrinterProtocol.swift; sourceTree = "<group>"; };
+		E07BA5EA17C32B253EED48A0 /* Pods-EventBusExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventBusExampleTests.release.xcconfig"; path = "Target Support Files/Pods-EventBusExampleTests/Pods-EventBusExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		E24F927025F0A5E300FAAEF4 /* EventBusExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventBusExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E24F927425F0A5E300FAAEF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E297A70825F0A7B4006E5BB9 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		E297A70C25F0A8AE006E5BB9 /* EventBusExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventBusExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		E297A70F25F0AFE9006E5BB9 /* ExampleSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSender.swift; sourceTree = "<group>"; };
+		E297A7B725F0BAB9006E5BB9 /* BusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusProvider.swift; sourceTree = "<group>"; };
 		E2AE83F9252E0F62000DE71A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E2AE83FA252E0F62000DE71A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,35 +82,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6D7B73A25E0E99D003B0B96 /* AsyncEventBus.framework in Frameworks */,
+				ADC1924B3E90FF907F34C505 /* libPods-EventBusExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6D7B72225E0E99C003B0B96 /* Frameworks */ = {
+		E24F926D25F0A5E300FAAEF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6D7B72A25E0E99D003B0B96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6D7B72E25E0E99D003B0B96 /* AsyncEventBus.framework in Frameworks */,
+				F6EB55E3B0440DE7A712040E /* libPods-EventBusExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		098C84E479D439FA36EE594D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97685BA7B4833226BC89C703 /* libPods-EventBusExample.a */,
+				7C20E78AADD180D562E946C6 /* libPods-EventBusExampleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E9ADBBC4407EAC27E4CC1DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A6F871CE0B14A64A290CD55 /* Pods-EventBusExample.debug.xcconfig */,
+				5E13C7D192C8A03547D51D1D /* Pods-EventBusExample.release.xcconfig */,
+				7552ACB3939F84BB8BE51B81 /* Pods-EventBusExampleTests.debug.xcconfig */,
+				E07BA5EA17C32B253EED48A0 /* Pods-EventBusExampleTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A6156DE424DD793A0031A5C3 = {
 			isa = PBXGroup;
 			children = (
 				A6156DEF24DD793A0031A5C3 /* EventBusExample */,
-				A6D7B72625E0E99C003B0B96 /* AsyncEventBus */,
-				A6D7B73325E0E99D003B0B96 /* AsyncEventBusTests */,
+				E24F927125F0A5E300FAAEF4 /* EventBusExampleTests */,
 				A6156DEE24DD793A0031A5C3 /* Products */,
+				7E9ADBBC4407EAC27E4CC1DC /* Pods */,
+				098C84E479D439FA36EE594D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,8 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				A6156DED24DD793A0031A5C3 /* EventBusExample.app */,
-				A6D7B72525E0E99C003B0B96 /* AsyncEventBus.framework */,
-				A6D7B72D25E0E99D003B0B96 /* AsyncEventBusTests.xctest */,
+				E24F927025F0A5E300FAAEF4 /* EventBusExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +140,8 @@
 		A6156DEF24DD793A0031A5C3 /* EventBusExample */ = {
 			isa = PBXGroup;
 			children = (
+				E297A7B725F0BAB9006E5BB9 /* BusProvider.swift */,
+				E297A70C25F0A8AE006E5BB9 /* EventBusExample-Bridging-Header.h */,
 				E2AE83F9252E0F62000DE71A /* ViewController.h */,
 				E2AE83FA252E0F62000DE71A /* ViewController.m */,
 				A6156DF024DD793A0031A5C3 /* AppDelegate.h */,
@@ -163,83 +153,31 @@
 				A6156DFE24DD793D0031A5C3 /* LaunchScreen.storyboard */,
 				A6156E0124DD793D0031A5C3 /* Info.plist */,
 				A6156E0224DD793D0031A5C3 /* main.m */,
+				E297A70825F0A7B4006E5BB9 /* ExampleViewController.swift */,
+				E297A70F25F0AFE9006E5BB9 /* ExampleSender.swift */,
 			);
 			path = EventBusExample;
 			sourceTree = "<group>";
 		};
-		A6D7B72625E0E99C003B0B96 /* AsyncEventBus */ = {
-			isa = PBXGroup;
-			children = (
-				A6D7B76C25E0F8C3003B0B96 /* source */,
-				A6D7B72725E0E99C003B0B96 /* AsyncEventBus.h */,
-				A6D7B72825E0E99C003B0B96 /* Info.plist */,
-			);
-			path = AsyncEventBus;
-			sourceTree = "<group>";
-		};
-		A6D7B73325E0E99D003B0B96 /* AsyncEventBusTests */ = {
+		E24F927125F0A5E300FAAEF4 /* EventBusExampleTests */ = {
 			isa = PBXGroup;
 			children = (
 				A6D7B77025E0F8C3003B0B96 /* BusProvider.swift */,
 				A6464BE325DF9DC700193DDB /* AsyncEventBusMqttTest.swift */,
 				A6D7B73425E0E99D003B0B96 /* AsyncEventBusTests.swift */,
-				A6D7B73625E0E99D003B0B96 /* Info.plist */,
+				E24F927425F0A5E300FAAEF4 /* Info.plist */,
 			);
-			path = AsyncEventBusTests;
-			sourceTree = "<group>";
-		};
-		A6D7B76C25E0F8C3003B0B96 /* source */ = {
-			isa = PBXGroup;
-			children = (
-				A6D7B77225E0F8C3003B0B96 /* Protocol */,
-				A6D7B76D25E0F8C3003B0B96 /* Imp */,
-				A6D7B77125E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h */,
-				A6D7B77525E0F8C3003B0B96 /* TopicManager.swift */,
-			);
-			name = source;
-			path = ../../source;
-			sourceTree = "<group>";
-		};
-		A6D7B76D25E0F8C3003B0B96 /* Imp */ = {
-			isa = PBXGroup;
-			children = (
-				A6D7B76E25E0F8C3003B0B96 /* TopicComparator-Mqtt.swift */,
-				A6D7B76F25E0F8C3003B0B96 /* EventBus-Notification.swift */,
-			);
-			path = Imp;
-			sourceTree = "<group>";
-		};
-		A6D7B77225E0F8C3003B0B96 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				A6D7B77325E0F8C3003B0B96 /* TopicMatcherProtocol.swift */,
-				A6D7B77425E0F8C3003B0B96 /* EventBusProtocol.swift */,
-				E268430725EFE59A00DE5290 /* EventBusMessageProtocol.swift */,
-				E268430B25EFE5A800DE5290 /* EventBusDisposableProtocol.swift */,
-				E268431325EFE61600DE5290 /* EventBusLogPrinterProtocol.swift */,
-			);
-			path = Protocol;
+			path = EventBusExampleTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		A6D7B72025E0E99C003B0B96 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6D7B77925E0F8C3003B0B96 /* EventBusExample-Bridging-Header.h in Headers */,
-				A6D7B73725E0E99D003B0B96 /* AsyncEventBus.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		A6156DEC24DD793A0031A5C3 /* EventBusExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6156E1124DD793D0031A5C3 /* Build configuration list for PBXNativeTarget "EventBusExample" */;
 			buildPhases = (
+				F0E99529E9C86A5056869AF9 /* [CP] Check Pods Manifest.lock */,
 				A6156DE924DD793A0031A5C3 /* Sources */,
 				A6156DEA24DD793A0031A5C3 /* Frameworks */,
 				A6156DEB24DD793A0031A5C3 /* Resources */,
@@ -248,48 +186,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				A6D7B73925E0E99D003B0B96 /* PBXTargetDependency */,
 			);
 			name = EventBusExample;
 			productName = EventBusExample;
 			productReference = A6156DED24DD793A0031A5C3 /* EventBusExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A6D7B72425E0E99C003B0B96 /* AsyncEventBus */ = {
+		E24F926F25F0A5E300FAAEF4 /* EventBusExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6D7B74125E0E99D003B0B96 /* Build configuration list for PBXNativeTarget "AsyncEventBus" */;
+			buildConfigurationList = E24F927725F0A5E300FAAEF4 /* Build configuration list for PBXNativeTarget "EventBusExampleTests" */;
 			buildPhases = (
-				A6D7B72025E0E99C003B0B96 /* Headers */,
-				A6D7B72125E0E99C003B0B96 /* Sources */,
-				A6D7B72225E0E99C003B0B96 /* Frameworks */,
-				A6D7B72325E0E99C003B0B96 /* Resources */,
+				44E83D14CF1771CBB546F725 /* [CP] Check Pods Manifest.lock */,
+				E24F926C25F0A5E300FAAEF4 /* Sources */,
+				E24F926D25F0A5E300FAAEF4 /* Frameworks */,
+				E24F926E25F0A5E300FAAEF4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E24F927625F0A5E300FAAEF4 /* PBXTargetDependency */,
 			);
-			name = AsyncEventBus;
-			productName = AsyncEventBus;
-			productReference = A6D7B72525E0E99C003B0B96 /* AsyncEventBus.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A6D7B72C25E0E99D003B0B96 /* AsyncEventBusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A6D7B74225E0E99D003B0B96 /* Build configuration list for PBXNativeTarget "AsyncEventBusTests" */;
-			buildPhases = (
-				A6D7B72925E0E99D003B0B96 /* Sources */,
-				A6D7B72A25E0E99D003B0B96 /* Frameworks */,
-				A6D7B72B25E0E99D003B0B96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A6D7B73025E0E99D003B0B96 /* PBXTargetDependency */,
-				A6D7B73225E0E99D003B0B96 /* PBXTargetDependency */,
-			);
-			name = AsyncEventBusTests;
-			productName = AsyncEventBusTests;
-			productReference = A6D7B72D25E0E99D003B0B96 /* AsyncEventBusTests.xctest */;
+			name = EventBusExampleTests;
+			productName = EventBusExampleTests;
+			productReference = E24F927025F0A5E300FAAEF4 /* EventBusExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -298,7 +217,7 @@
 		A6156DE524DD793A0031A5C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = ryanhfwang;
 				TargetAttributes = {
@@ -306,11 +225,8 @@
 						CreatedOnToolsVersion = 11.6;
 						LastSwiftMigration = 1160;
 					};
-					A6D7B72425E0E99C003B0B96 = {
-						CreatedOnToolsVersion = 12.0;
-					};
-					A6D7B72C25E0E99D003B0B96 = {
-						CreatedOnToolsVersion = 12.0;
+					E24F926F25F0A5E300FAAEF4 = {
+						CreatedOnToolsVersion = 12.4;
 						TestTargetID = A6156DEC24DD793A0031A5C3;
 					};
 				};
@@ -329,8 +245,7 @@
 			projectRoot = "";
 			targets = (
 				A6156DEC24DD793A0031A5C3 /* EventBusExample */,
-				A6D7B72425E0E99C003B0B96 /* AsyncEventBus */,
-				A6D7B72C25E0E99D003B0B96 /* AsyncEventBusTests */,
+				E24F926F25F0A5E300FAAEF4 /* EventBusExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,14 +261,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6D7B72325E0E99C003B0B96 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6D7B72B25E0E99D003B0B96 /* Resources */ = {
+		E24F926E25F0A5E300FAAEF4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,6 +269,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44E83D14CF1771CBB546F725 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EventBusExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E99529E9C86A5056869AF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EventBusExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6156DE924DD793A0031A5C3 /* Sources */ = {
@@ -370,52 +325,30 @@
 				E2AE83FB252E0F62000DE71A /* ViewController.m in Sources */,
 				A6156DF224DD793A0031A5C3 /* AppDelegate.m in Sources */,
 				A6156E0324DD793D0031A5C3 /* main.m in Sources */,
+				E297A71025F0AFE9006E5BB9 /* ExampleSender.swift in Sources */,
+				E297A7B825F0BAB9006E5BB9 /* BusProvider.swift in Sources */,
 				A6156DF524DD793A0031A5C3 /* SceneDelegate.m in Sources */,
+				E297A70925F0A7B4006E5BB9 /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6D7B72125E0E99C003B0B96 /* Sources */ = {
+		E24F926C25F0A5E300FAAEF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E268430C25EFE5A800DE5290 /* EventBusDisposableProtocol.swift in Sources */,
-				A6D7B77625E0F8C3003B0B96 /* TopicComparator-Mqtt.swift in Sources */,
-				E268430825EFE59A00DE5290 /* EventBusMessageProtocol.swift in Sources */,
-				A6D7B77725E0F8C3003B0B96 /* EventBus-Notification.swift in Sources */,
-				A6D7B77B25E0F8C3003B0B96 /* EventBusProtocol.swift in Sources */,
-				A6D7B77C25E0F8C3003B0B96 /* TopicManager.swift in Sources */,
-				E268431425EFE61600DE5290 /* EventBusLogPrinterProtocol.swift in Sources */,
-				A6D7B77A25E0F8C3003B0B96 /* TopicMatcherProtocol.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6D7B72925E0E99D003B0B96 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6D7B73525E0E99D003B0B96 /* AsyncEventBusTests.swift in Sources */,
-				A6D7B74825E0F213003B0B96 /* AsyncEventBusMqttTest.swift in Sources */,
-				A6D7B82125E103F4003B0B96 /* BusProvider.swift in Sources */,
+				E24F927B25F0A5EC00FAAEF4 /* AsyncEventBusTests.swift in Sources */,
+				E24F927D25F0A5EC00FAAEF4 /* AsyncEventBusMqttTest.swift in Sources */,
+				E24F927C25F0A5EC00FAAEF4 /* BusProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A6D7B73025E0E99D003B0B96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A6D7B72425E0E99C003B0B96 /* AsyncEventBus */;
-			targetProxy = A6D7B72F25E0E99D003B0B96 /* PBXContainerItemProxy */;
-		};
-		A6D7B73225E0E99D003B0B96 /* PBXTargetDependency */ = {
+		E24F927625F0A5E300FAAEF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A6156DEC24DD793A0031A5C3 /* EventBusExample */;
-			targetProxy = A6D7B73125E0E99D003B0B96 /* PBXContainerItemProxy */;
-		};
-		A6D7B73925E0E99D003B0B96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A6D7B72425E0E99C003B0B96 /* AsyncEventBus */;
-			targetProxy = A6D7B73825E0E99D003B0B96 /* PBXContainerItemProxy */;
+			targetProxy = E24F927525F0A5E300FAAEF4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -553,6 +486,7 @@
 		};
 		A6156E1224DD793D0031A5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A6F871CE0B14A64A290CD55 /* Pods-EventBusExample.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -565,7 +499,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.EventBusExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "EventBusExample/source/EventBusExample-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventBusExample/EventBusExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -574,6 +508,7 @@
 		};
 		A6156E1324DD793D0031A5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E13C7D192C8A03547D51D1D /* Pods-EventBusExample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -584,87 +519,31 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.EventBusExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "EventBusExample/source/EventBusExample-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventBusExample/EventBusExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		A6D7B73D25E0E99D003B0B96 /* Debug */ = {
+		E24F927825F0A5E300FAAEF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7552ACB3939F84BB8BE51B81 /* Pods-EventBusExampleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AsyncEventBus/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = EventBusExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.AsyncEventBus;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A6D7B73E25E0E99D003B0B96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AsyncEventBus/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.AsyncEventBus;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A6D7B73F25E0E99D003B0B96 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AsyncEventBusTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.AsyncEventBusTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EventBusExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -674,19 +553,22 @@
 			};
 			name = Debug;
 		};
-		A6D7B74025E0E99D003B0B96 /* Release */ = {
+		E24F927925F0A5E300FAAEF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E07BA5EA17C32B253EED48A0 /* Pods-EventBusExampleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AsyncEventBusTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = EventBusExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhfwang.AsyncEventBusTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EventBusExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -717,20 +599,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6D7B74125E0E99D003B0B96 /* Build configuration list for PBXNativeTarget "AsyncEventBus" */ = {
+		E24F927725F0A5E300FAAEF4 /* Build configuration list for PBXNativeTarget "EventBusExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A6D7B73D25E0E99D003B0B96 /* Debug */,
-				A6D7B73E25E0E99D003B0B96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A6D7B74225E0E99D003B0B96 /* Build configuration list for PBXNativeTarget "AsyncEventBusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A6D7B73F25E0E99D003B0B96 /* Debug */,
-				A6D7B74025E0E99D003B0B96 /* Release */,
+				E24F927825F0A5E300FAAEF4 /* Debug */,
+				E24F927925F0A5E300FAAEF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -117,6 +117,49 @@ class AsyncEventBusTests: XCTestCase {
 
         self.wait(for: [expect], timeout: 1)
     }
+    
+    
+    func testEventBusFilter() throws {
+        
+        let subscribeTopic: String = "/testTopic/+"
+        let publishTopic: String = "/testTopic/abc"
+        let expect: XCTestExpectation = XCTestExpectation.init()
+        
+        
+        let options: BusOptions = BusOptions.init { (message) -> Bool in
+            return message.topic.hasSuffix("abc")
+        }
+    
+        self.bus.subscribe(topic: subscribeTopic, options: options) { (message) in
+            expect.fulfill()
+        }
+        
+        self.bus.publish(topic: publishTopic, payload: nil) { (message) in
+        }
+        self.wait(for: [expect], timeout: 1)
+    }
+    
+    
+    func testEventBusFilterNotInvoke() throws {
+        
+        let subscribeTopic: String = "/testTopic/+"
+        let publishTopic: String = "/testTopic/abc"
+        let expect: XCTestExpectation = XCTestExpectation.init()
+        expect.isInverted = true
+        
+        let options: BusOptions = BusOptions.init { (message) -> Bool in
+            return message.topic.hasSuffix("abcd")
+        }
+    
+
+        self.bus.subscribe(topic: subscribeTopic, options: options) { (message) in
+            expect.fulfill()
+        }
+        
+        self.bus.publish(topic: publishTopic, payload: nil) { (message) in
+        }
+        self.wait(for: [expect], timeout: 1)
+    }
 }
 
 

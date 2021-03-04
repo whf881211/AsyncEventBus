@@ -6,19 +6,26 @@
 //  Copyright © 2020 ryanhfwang. All rights reserved.
 //
 
+
+
+
+
 import Foundation
 
-public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
+public typealias EventHandleBlock = (BusMessage) -> Void
 
-
-@objc public protocol BusRepresentable {
+@objc public protocol EventBus {
     
     /// Subscribe
     ///
     /// SubscribeDisposable is used to unsubscribe.
     @discardableResult
-    @objc(subscribeTopic: action:)
-    func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable
+    @objc(subscribeTopic: handler:)
+    func subscribe(topic: String, handler: @escaping EventHandleBlock) -> SubscribeDisposable
+    
+    @discardableResult
+    @objc(subscribeTopic: handler: filter:)
+    func subscribe(topic: String, options: BusOptions, handler: @escaping EventHandleBlock) -> SubscribeDisposable
 
     
     
@@ -33,7 +40,6 @@ public typealias EventHandleBlock = (BusMessageRepresentable) -> Void
     
     @objc(publishTopic: payload: replyHandler:)
     func publish(topic: String, payload: Any?, replyHandler: @escaping EventHandleBlock)
-    
     
     
     ///Set LogPrinter

@@ -11,7 +11,7 @@ import Foundation
 ///Message
 ///
 ///Subscirber may use reply method to reply the message.
-@objc public protocol BusMessageRepresentable {
+@objc public protocol BusMessage {
     var topic: String { get }
     var payload: Any? { get }
     func reply(payload: Any?)

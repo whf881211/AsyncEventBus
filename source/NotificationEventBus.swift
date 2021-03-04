@@ -9,21 +9,20 @@
 import Foundation
 
 
-class EventMessage: NSObject, BusMessageRepresentable {
+class EventMessage: NSObject, BusMessage {
     var replyHandler: EventHandleBlock = {_ in }
     
     var topic: String = ""
-    
+
     var payload: Any?
     
     var replyTopic: String = ""
     
-    weak var senderBus: BusRepresentable?
+    weak var senderBus: EventBus?
     
     func reply(payload: Any?) {
         senderBus?.publish(topic: replyTopic, payload: payload)
     }
-    
 }
 
 
@@ -47,7 +46,7 @@ class EventBusSubscriber: NSObject, SubscribeDisposable {
 }
 
 @objc
-public class EventNotificationBus: NSObject, BusRepresentable {
+public class NotificationEventBus: NSObject, EventBus {
     var markObject: String
     var messageKey: String
     var topicHeader: String
@@ -85,7 +84,7 @@ public class EventNotificationBus: NSObject, BusRepresentable {
         publishMessage(message)
     }
     
-    public func publish(topic: String, payload: Any?, replyHandler: @escaping (BusMessageRepresentable) -> Void) {
+    public func publish(topic: String, payload: Any?, replyHandler: @escaping (BusMessage) -> Void) {
         let message = EventMessage.init()
         message.topic = topic
         message.payload = payload
@@ -105,15 +104,27 @@ public class EventNotificationBus: NSObject, BusRepresentable {
         
     ///订阅
     @discardableResult
+    public func subscribe(topic: String, options: BusOptions, handler: @escaping EventHandleBlock) -> SubscribeDisposable {
+        return self.subscribeTopic(topic: topic, handler: handler, options: options)
+    }
+    
+    @discardableResult
     public func subscribe(topic: String, handler:@escaping EventHandleBlock) -> SubscribeDisposable {
+        return self.subscribeTopic(topic: topic, handler: handler, options: nil)
+    }
+    
+    
+    func subscribeTopic(topic: String, handler: @escaping EventHandleBlock, options: BusOptions?) -> SubscribeDisposable {
         ///Register Observer
         weak var observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: topicHeader + topic), object: markObject, queue: workingQueue) { [weak self] (notification) in
             ///Send Event
             guard let self = self else {
                 return
             }
-            if let messageRepresentable = notification.userInfo?[self.messageKey] as? BusMessageRepresentable{
-                EventNotificationBus.scheduleDistribute(block: handler, argument: messageRepresentable)
+            if let messageRepresentable = notification.userInfo?[self.messageKey] as? BusMessage{
+                if (options?.filter?(messageRepresentable) ?? true) {
+                    NotificationEventBus.scheduleDistribute(block: handler, argument: messageRepresentable)
+                }
             }
         }
         /// TopicManager
@@ -131,24 +142,9 @@ public class EventNotificationBus: NSObject, BusRepresentable {
         let subscriber = EventBusSubscriber.init(topic, handler: handler, preblock: unsubscribePreBlock)
         return subscriber
     }
+
     
-    func subscribe(replyTopic: String, replyHandler:@escaping EventHandleBlock) {
-        ///Register Observer
-        weak var observer: NSObjectProtocol?
-        observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: topicHeader + replyTopic), object: markObject, queue: workingQueue) { (notification) in
-            ///remove Observer
-            NotificationCenter.default.removeObserver(observer as Any)
-            self.topicManager.remove(topic: replyTopic)
-            ///Send Event
-            if let messageRepresentable = notification.userInfo?[self.messageKey] as? BusMessageRepresentable{
-                EventNotificationBus.scheduleDistribute(block: replyHandler, argument: messageRepresentable)
-            }
-        }
-        /// TopicManager
-        let _ = self.topicManager.add(topic: replyTopic)
-    }
-    
-    func publishMessage(_ message: BusMessageRepresentable) {
+    func publishMessage(_ message: BusMessage) {
         if !message.topic.hasPrefix("/") {
             assert(false, "Topic must start with /")
         }
@@ -163,8 +159,8 @@ public class EventNotificationBus: NSObject, BusRepresentable {
     }
 }
 
-extension EventNotificationBus  {
-    private class func scheduleDistribute( block: @escaping EventHandleBlock, argument:BusMessageRepresentable) {
+extension NotificationEventBus  {
+    private class func scheduleDistribute( block: @escaping EventHandleBlock, argument: BusMessage) {
         DispatchQueue.main.async {
             block(argument)
         }

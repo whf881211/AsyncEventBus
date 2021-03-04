@@ -11,8 +11,8 @@ Pod::Spec.new do |spec|
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "whf881211" => "whf881211@gmail.com" }
-  spec.platform     = :ios, "9.0"
-  spec.swift_versions = "5.0"
+  spec.ios.deployment_target = '9.0'
+  spec.swift_versions = "4.0"
   spec.source       = { :git => "https://github.com/whf881211/AsyncEventBus.git", :tag => spec.version.to_s }
   spec.source_files  = "source/*.swift", "source/**/*.swift"
   spec.static_framework  =  true

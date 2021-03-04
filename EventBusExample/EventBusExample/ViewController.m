@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <AsyncEventBus/AsyncEventBus.h>
+#import "EventBusExample-Swift.h"
+//#import <AsyncEventBus-Swift.h>
 @interface ViewController ()
 
 
@@ -26,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 
