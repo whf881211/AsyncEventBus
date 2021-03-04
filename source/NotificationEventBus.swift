@@ -179,7 +179,7 @@ extension NotificationEventBus  {
 // use in UnitTest
 extension NotificationEventBus  {
     public func forceSync(_ sync: Bool) {
-        isForceSync = true
+        isForceSync = sync
     }
     private class func syncDistribute( block: @escaping EventHandleBlock, argument: BusMessage) {
         block(argument)

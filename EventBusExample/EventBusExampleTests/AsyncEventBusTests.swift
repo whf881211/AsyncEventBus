@@ -163,7 +163,7 @@ class AsyncEventBusTests: XCTestCase {
     
     func testEventBusForceSync() throws {
         if let bus = self.bus as? NotificationEventBus  {
-            bus.isForceSync = true
+            bus.forceSync(true)
         }
         var testVar = 1
         let subscribeTopic: String = "/testTopic"
@@ -177,7 +177,7 @@ class AsyncEventBusTests: XCTestCase {
         XCTAssertEqual(testVar, 2)
         
         if let bus = self.bus as? NotificationEventBus  {
-            bus.isForceSync = false
+            bus.forceSync(false)
         }
     }
 }
