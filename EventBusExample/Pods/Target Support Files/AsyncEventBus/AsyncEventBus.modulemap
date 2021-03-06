@@ -1,0 +1,6 @@
+module AsyncEventBus {
+  umbrella header "AsyncEventBus-umbrella.h"
+
+  export *
+  module * { export * }
+}
