@@ -97,6 +97,9 @@ public class NotificationEventBus: NSObject, EventBus {
     }
     
     lazy var workingQueue: OperationQueue = {
+        if (isForceSync) {
+            return OperationQueue.main
+        }
         let queue = OperationQueue.init();
         queue.name = markObject + "EventBus.Dispatch.Queue"
         queue.maxConcurrentOperationCount = 1
@@ -182,7 +185,13 @@ extension NotificationEventBus  {
         isForceSync = sync
     }
     private class func syncDistribute( block: @escaping EventHandleBlock, argument: BusMessage) {
-        block(argument)
+        if Thread.isMainThread {
+            block(argument)
+        } else {
+            DispatchQueue.main.sync {
+                block(argument)
+            }
+        }
     }
 }
 
