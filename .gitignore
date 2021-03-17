@@ -6,3 +6,5 @@
 /EventBusExample/EventBusExample/.DS_Store
 /EventBusExample/EventBusExample.xcodeproj/xcuserdata/ryanhfwang.xcuserdatad/xcdebugger
 .DS_Store
+*.xcuserstate
+*.xcuserdatad
